@@ -17,7 +17,7 @@ export default function LandingPage() {
       <div>
         <CardBase/>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
