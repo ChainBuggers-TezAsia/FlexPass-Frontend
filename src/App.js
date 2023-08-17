@@ -1,13 +1,8 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import MovieCard from "./components/Movie";
-
+import LandingPage from ''
 function App() {
   return (
     <div className="App">
-      <Header />
-      <MovieCard />
-      <Footer />
+      <LandingPage />
     </div>
   );
 }
