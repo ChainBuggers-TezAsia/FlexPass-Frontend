@@ -1,9 +1,9 @@
 const MovieCard = () => {
   return (
-    <div className="relative rounded-sm w-full h-[27.13rem] overflow-hidden text-left text-[1.56rem] text-white font-oxanium">
-      <div className="absolute top-[0rem] left-[0rem] w-[18.19rem] h-[27.13rem]">
+    <div className="relative rounded-sm w-full h-[27.13rem] overflow-hidden text-left text-[1.56rem] text-white font-oxanium m-20 pb-4">
+      <div className="absolute top-[0rem] left-[0rem] w-[18.19rem] h-[27.13rem] ml-24">
         <div className="absolute top-[0rem] left-[0rem] w-[18.19rem] h-[27.13rem]">
-          <div className="absolute top-[0rem] left-[0rem] rounded-mini [background:linear-gradient(147.75deg,_rgba(255,_255,_255,_0.1),_rgba(255,_255,_255,_0.05))] [backdrop-filter:blur(20px)] w-[18.19rem] h-[27.13rem]" />
+          <div className="absolute top-[0rem] left-[0rem] rounded-mini [background:linear-gradient(147.75deg,_rgba(255,_255,_255,_0.1),_rgba(255,_255,_255,_0.05))] [backdrop-filter:blur(20px)] w-[18.19rem] h-[27.13rem] pb-4" />
           <div className="absolute top-[1.5rem] left-[1.5rem] w-[15.19rem] h-[24.13rem]">
             <img
               className="absolute top-[0rem] left-[0rem] rounded-mini w-[15.19rem] h-[19.63rem] object-cover"
