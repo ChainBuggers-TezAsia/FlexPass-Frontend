@@ -8,14 +8,11 @@ export default function LandingPage() {
   return (
     <div>
       <Header />
-      {/* <div className="z-10">
-        kvnrn
-      </div> */}
       <div className="absolute top-0 " style={{ zIndex: -2 }}>
         <img className="z-0 w-screen" src={bgImg} alt="" />
       </div>
       <div>
-        <CardBase/>
+        <CardBase />
       </div>
       <Footer />
     </div>
