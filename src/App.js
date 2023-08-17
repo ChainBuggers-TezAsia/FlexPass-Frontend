@@ -1,7 +1,13 @@
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import MovieCard from "./components/Movie";
+
 function App() {
   return (
     <div className="App">
-      <div className='text-red-500'>Helloworld!</div>
+      <Header />
+      <MovieCard />
+      <Footer />
     </div>
   );
 }
