@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 const Header = () => {
   return (
     <header className="relative w-full h-[6rem] overflow-hidden text-white font-inter">

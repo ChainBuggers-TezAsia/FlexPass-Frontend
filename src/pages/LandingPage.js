@@ -13,8 +13,9 @@ export default function LandingPage() {
       </div>
       <div className="flex flex-row">
         <div>
-        Unforgettable era of entertainment through our gateway to exceptional shows and experiences!
-        <div>Button</div>
+          Unforgettable era of entertainment through our gateway to exceptional
+          shows and experiences!
+          <div>Button</div>
         </div>
         <div>
           <img src="/MobileTickets" alt="" />
