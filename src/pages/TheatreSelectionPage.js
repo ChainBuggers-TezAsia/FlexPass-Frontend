@@ -8,13 +8,13 @@ import TheatreDetails from "../components/TheatreDetails";
 export default function TheatreSelectionPage() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="absolute top-0 " style={{ zIndex: -2 }}>
         <img className="w-screen" src={bgImg} alt="" />
       </div>
       <MovieBanner />
       <TheatreDetails />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

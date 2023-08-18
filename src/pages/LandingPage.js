@@ -7,19 +7,19 @@ import HeroSection from "../components/HeroSection";
 import Login from "../components/Login";
 
 export default function LandingPage() {
-  const [login, setLogin] = useState(false);
+  // const [login, setLogin] = useState(false);
   return (
     <div>
-      <Header setLogin={setLogin} checkLogin={login} className="z-10"/>
+      {/* <Header setLogin={setLogin} checkLogin={login} className="z-10"/> */}
       <div className="absolute top-0 " style={{ zIndex: -2 }}>
         <img className="w-screen" src={bgImg} alt="" />
       </div>
-      {login && <div>
+      {/* {login && <div>
         <Login/>
-      </div>}
+      </div>} */}
       <HeroSection />
       <CardBase />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
