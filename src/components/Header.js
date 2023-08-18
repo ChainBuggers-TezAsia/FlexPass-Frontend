@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Header = (props) => {
   return (
-    <header className="relative w-full h-[6rem] overflow-hidden text-white font-inter">
+    <header className="relative w-full h-[5.5rem] overflow-hidden text-white font-inter">
       <div className="absolute inset-0 w-full h-[6.06rem]">
         <img
           className="absolute inset-0 w-full h-[6rem] object-cover"
@@ -11,14 +11,14 @@ const Header = (props) => {
         />
         <div className="absolute inset-0 bg-gray-200 backdrop-blur-[7.2px] opacity-50 border border-solid border-gray-100" />
       </div>
-      <h1 className="absolute top-2 left-12 text-2xl font-extrabold font-poppins">
+      <h1 className="absolute top-1 left-12 text-2xl font-extrabold font-poppins">
         FlexPass
       </h1>
-      <nav className="absolute top-10 left-72 space-x-4">
+      <nav className="absolute top-9 left-72 space-x-4">
         <a className="text-white hover:text-gray-300">My Tickets</a>
         <a className="text-white hover:text-gray-300">Wallet</a>
       </nav>
-      <nav className="absolute top-5 right-7 space-x-4 flex flex-row">
+      <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
         <button
           className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
           onClick={() => {

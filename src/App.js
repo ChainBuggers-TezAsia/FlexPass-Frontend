@@ -3,14 +3,16 @@
 // import CardBase from "./components/CardBase";
 //import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 // import TheatreSelectionPage from "./pages/TheatreSelectionPage";
-//import LandingPage from "./pages/LandingPage";
+// import LandingPage from "./pages/LandingPage";
 // import MovieCard from "./components/Movie";
 import SeatSelectionPage from "./pages/SeatSelectionPage";
 
 function App() {
   return (
     <div className="App">
+    
       <SeatSelectionPage />
+
     </div>
   );
 }
