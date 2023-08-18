@@ -36,12 +36,6 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 hidden">
-                <img alt="" src="/iconclock.svg" />
-              </div>
-              <div>Explore</div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 hidden">
                 <img alt="" src="/iconclock1.svg" />
               </div>
               <div>How it works</div>
