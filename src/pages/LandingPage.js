@@ -8,14 +8,12 @@ import HeroSection from "../components/HeroSection";
 export default function LandingPage() {
   return (
     <div>
-      <Header />
       <div className="absolute top-0 " style={{ zIndex: -2 }}>
-        <img className="z-0 w-screen" src={bgImg} alt="" />
+        <img className="w-screen" src={bgImg} alt="" />
       </div>
+      <Header />
       <HeroSection />
-      <div>
-        <CardBase />
-      </div>
+      <CardBase />
       <Footer />
     </div>
   );
