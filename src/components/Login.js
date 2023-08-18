@@ -1,6 +1,6 @@
 const Login = () => {
   return (
-    <div className="relative rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-full h-[603px] text-left text-[36px] text-white font-noto-sans w-[470px] h-[610px]">
+    <div className="relative rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-full h-[603px] text-left text-[36px] text-white font-noto-sans w-[470px] h-[610px] m-auto">
       <div className="absolute top-[calc(50%-_228.5px)] left-[calc(50%-_199.5px)] w-[400px] h-[520px]">
         <div className="absolute top-[calc(50%-_276px)] left-[calc(50%-_200px)] w-[395px] h-[400px]">
           <div className="absolute top-[calc(50%-_210px)] left-[calc(50%-_198.5px)] w-[400px] h-[331px]">

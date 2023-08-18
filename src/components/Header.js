@@ -1,4 +1,6 @@
-const Header = () => {
+import React, { useState } from "react";
+
+const Header = (props) => {
   return (
     <header className="relative w-full h-[6rem] overflow-hidden text-white font-inter">
       <div className="absolute inset-0 w-full h-[6.06rem]">
@@ -17,12 +19,17 @@ const Header = () => {
         <a className="text-white hover:text-gray-300">Wallet</a>
       </nav>
       <nav className="absolute top-5 right-7 space-x-4 flex flex-row">
-        <div className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white">
+        <button
+          className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
+          onClick={() => {
+            props.setLogin(!props.checkLogin)
+          }}
+        >
           <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-white"></div>
           <span className="text-base font-medium text-white z-10 px-8 py-2">
             Login
           </span>
-        </div>
+        </button>
         <div className="flex justify-center items-center relative h-75 w-200 rounded-full bg-[#6851FF]">
           <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
           <span className="text-base font-medium text-white z-10 px-8 py-3">
