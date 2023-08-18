@@ -1,6 +1,6 @@
 import React from "react";
 import bgImg from "../assets/bg.svg";
-// import Header from "../components/Header";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function SeatSelectionPage() {
