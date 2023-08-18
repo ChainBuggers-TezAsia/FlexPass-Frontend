@@ -13,7 +13,7 @@ export default function TheatreSelectionPage() {
         <img className="w-screen" src={bgImg} alt="" />
       </div>
       <MovieBanner />
-      <TheatreDetails />
+      {/* <TheatreDetails /> */}
       {/* <Footer /> */}
     </div>
   );
