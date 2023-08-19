@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-row mt-20 ml-36">
+    <div className="flex flex-row mt-20 mx-36">
       <div className="mt-20 flex flex-col justify-start">
       <div className="font-semibold text-white">
         <div className="text-[2.5rem] leading-[3.31rem]">Unforgettable era of entertainment through our gateway to exceptional shows and experiences!</div>

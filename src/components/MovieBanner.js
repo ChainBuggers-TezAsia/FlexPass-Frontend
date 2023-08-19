@@ -1,18 +1,18 @@
 import React from "react";
-import Date from "./Date";
+import moviebg from "../assets/moviebg.png";
 
 export default function MovieBanner() {
   return (
     <div>
       <div>
         <img
-          className="relative w-full h-[490px] object-cover"
+          className="relative w-full h-[66vh] object-cover"
           alt=""
-          src="movie-banner.png"
-          style={{ zIndex: -1 }}
+          src={moviebg}
+          style={{ zIndex: 1 }}
         />
         <span
-          className="absolute top-[60vh] left-[30vw] text-white"
+          className="absolute top-[50vh] left-[30vw] text-white"
           style={{ zIndex: 1 }}
         >
           <p className="my-1 ml-2" style={{ fontSize: "20px" }}>
@@ -23,8 +23,8 @@ export default function MovieBanner() {
           </p>
         </span>
       </div>
-      <div className="bg-[#1A142FCC] h-60">
-        <div className="absolute top-[83vh] left-[30vw] text-white">
+      <div className="bg-[#1A142FCC] h-[34vh]">
+        <div className="absolute top-[70vh] left-[30vw] text-white">
           <div className="flex flex-row ">
             <span
               className="relative rounded-[11px] box-border flex flex-row py-1 px-6 items-start justify-center text-left text-[12px] text-gray font-roboto border-[1px] border-solid border-gray mx-4"
@@ -57,7 +57,7 @@ export default function MovieBanner() {
           <div className="flex flex-row mt-8">
             <div className="w-[30vw]">
               <span style={{ fontSize: "24px" }}>Date</span>
-              <div className="flex flex-row my-4" style={{ fontSize: "18 px" }}>
+              <div className="flex flex-row " style={{ fontSize: "18 px" }}>
                 <span className="py-3 mr-4"> &lt;</span>
                 <span className="mx-2 text-center">
                   28 Aug
@@ -79,7 +79,7 @@ export default function MovieBanner() {
             </div>
             <div className="w-[30vw]">
               <span style={{ fontSize: "24px" }}>Available Date</span>
-              <div className="flex flex-row my-7" style={{ fontSize: "18 px" }}>
+              <div className="flex flex-row " style={{ fontSize: "18 px" }}>
                 <span className="mr-4"> &lt;</span>
                 <span className="mx-2 text-center">10:30 Pm</span>
                 <span className="mx-2 text-center">11:00 Pm</span>
@@ -90,8 +90,8 @@ export default function MovieBanner() {
           </div>
         </div>
       </div>
-      <div className="backdrop-blur-lg absolute top-[60vh] left-[8vw] w-[18vw] h-[50vh] flex content-center m-auto justify-center items-center" style={{zIndex:2, borderRadius:"30px"}}>
-        <img src="nft-picture@2x.png" alt="" className="w-[15vw] h-[45vh]" />
+      <div className=" absolute top-[60vh] left-[8vw] w-[18vw] h-[15vh] flex content-center m-auto justify-center items-center" style={{zIndex:2, borderRadius:"30px"}}>
+        <img src="nft-picture@2x.png" alt="" className="w-[15vw] h-[40vh]" />
       </div>
     </div>
   );

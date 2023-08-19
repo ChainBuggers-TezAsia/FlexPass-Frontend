@@ -54,12 +54,6 @@ module.exports = {
         oxanium: "Oxanium",
         inter: "Inter",
       },
-      borderRadius: {
-        "9xs-5": "3.5px",
-        mini: "15px",
-        "22369581xl": "22369600px",
-        "2xs": "11px",
-      },
     },
     fontSize: {
       sm: "0.88rem",
@@ -72,7 +66,5 @@ module.exports = {
       "5xs": "0.5rem",
     },
   },
-  corePlugins: {
-    preflight: false,
-  },
+
 };
