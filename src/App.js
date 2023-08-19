@@ -32,9 +32,9 @@ function App() {
       <Header setLogin={setLogin} checkLogin={login} className="z-10" />
       <Header setLogin={setLogin} checkLogin={login} />
       {
-        login && <Login/>
+        login && <Login />
       }
-      <BrowserRouter>
+      {!login && <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route
@@ -44,8 +44,8 @@ function App() {
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
         </Routes>
-      </BrowserRouter>
-      <Footer/>
+      </BrowserRouter>}
+      <Footer />
     </div>
   );
 }
