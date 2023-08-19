@@ -14,7 +14,7 @@ export default function HeroSection() {
       </div>
       <div>
         <img
-          className="w-[32.31rem] h-[32.81rem] object-cover"
+          className="w-[84.31rem] h-[32.81rem] object-cover"
           alt=""
           src="../MobileTickets.png"
         />

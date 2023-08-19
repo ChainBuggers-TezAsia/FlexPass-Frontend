@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SeatSelector.css'; // Import the CSS file for this component
+// import './SeatSelector.css'; // Import the CSS file for this component
 
 const SeatSelector = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);

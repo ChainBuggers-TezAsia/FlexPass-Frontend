@@ -17,21 +17,17 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" />
       {login && (
         <div>
           <Login />
         </div>
       )} */}
-      <SeatSelectionPage />
-=======
+      {/* <SeatSelectionPage /> */}
 
-      <MovieBanner />
->>>>>>> ccae45412b8fe2df98f12736599980f0b402f040
+      {/* <MovieBanner /> */}
 
-=======
       {/* <Navbar /> */}
       <BrowserRouter>
         <Routes>
@@ -44,7 +40,6 @@ function App() {
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
         </Routes>
       </BrowserRouter>
->>>>>>> b6d8eb064b7a5262fb4670eb5a866044b018c114
     </div>
   );
 }
