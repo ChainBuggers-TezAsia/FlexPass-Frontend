@@ -2,6 +2,7 @@ import React from "react";
 import bgImg from "../assets/bg.svg";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SeatSelector from "../components/SeatSelector"; // Import the MovieSeatBooking component
 
 export default function SeatSelectionPage() {
   return (
@@ -14,7 +15,8 @@ export default function SeatSelectionPage() {
         <Header />
         <main className="container mx-auto mt-10 p-4">
           <h1 className="text-3xl font-semibold mb-4">Select Your Seats</h1>
-          {/* Your seat selection components go here */}
+          {/* Render the MovieSeatBooking component */}
+          <SeatSelector />
         </main>
       </div>
       <div className="absolute bottom-0 w-full">
@@ -23,4 +25,3 @@ export default function SeatSelectionPage() {
     </div>
   );
 }
-  

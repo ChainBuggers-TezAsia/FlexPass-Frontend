@@ -14,7 +14,12 @@ function App() {
 
   return (
     <div className="App">
-    
+      <Header setLogin={setLogin} checkLogin={login} className="z-10" />
+      {login && (
+        <div>
+          <Login />
+        </div>
+      )}
       <SeatSelectionPage />
 
     </div>
