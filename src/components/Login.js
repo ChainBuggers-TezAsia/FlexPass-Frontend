@@ -1,24 +1,25 @@
 const Login = () => {
   return (
-    <div className="relative rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-full h-[603px] text-left text-[36px] text-white font-noto-sans w-[470px] h-[610px] m-auto">
+    <div className=" flex justify-center items-center">
+    <div className="relative rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-[30%] h-[603px] text-left text-white font-noto-sans ">
       <div className="absolute top-[calc(50%-_228.5px)] left-[calc(50%-_199.5px)] w-[400px] h-[520px]">
         <div className="absolute top-[calc(50%-_276px)] left-[calc(50%-_200px)] w-[395px] h-[400px]">
           <div className="absolute top-[calc(50%-_210px)] left-[calc(50%-_198.5px)] w-[400px] h-[331px]">
             <div className="absolute top-[calc(50%-_174.5px)] left-[calc(50%-_199px)] w-[135px] h-[71px]">
-              <div className="absolute top-[5px] left-[150px] font-semibold">
+              <div className="absolute top-[5px] text-[36px] left-[150px] font-semibold">
                 Login
               </div>
               <div className="absolute top-[49px] left-[0px] text-base font-medium">
                 Glad you’re back.!
               </div>
             </div>
-            <div className="absolute top-[calc(50%-_89.5px)] left-[calc(50%-_200px)] w-[400px] h-[283px] text-xl">
-              <div className="absolute top-[calc(50%-_141.5px)] left-[calc(50%-_200px)] rounded-xl box-border w-[400px] h-[55px] border-[1px] border-solid border-white">
-                <div className="absolute top-[14px] left-[16px]">Username</div>
+            <div className="absolute top-[calc(50%-_89.5px)] left-[calc(50%-_200px)] w-[400px] h-[283px]">
+              <div className="absolute top-[calc(50%-_141.5px)] left-[calc(50%-_200px)] rounded-xl box-border w-full py-5 border-[1px] border-solid border-white">
+                <div className="absolute top-[14px] left-[16px]  text-xl">Username</div>
               </div>
-              <div className="absolute top-[calc(50%-_61.5px)] left-[calc(50%-_200px)] w-[400px] h-[89px]">
-                <div className="absolute top-[calc(50%-_44.5px)] left-[calc(50%-_200px)] rounded-xl box-border w-[400px] h-[55px] border-[1px] border-solid border-white">
-                  <div className="absolute top-[14px] left-[16px]">
+              <div className="absolute top-[calc(50%-_61.5px)] left-[calc(50%-_200px)] w-[400px] my-6">
+                <div className="absolute top-[calc(50%-_44.5px)] left-[calc(50%-_200px)] rounded-xl box-border w-full py-5 border-[1px] border-solid border-white">
+                  <div className="absolute top-[14px] left-[16px]  text-xl">
                     Password
                   </div>
                   <img
@@ -33,14 +34,14 @@ const Login = () => {
                     alt=""
                     src="/fluentcheckboxchecked16filled.svg"
                   />
-                  <div className="absolute top-[calc(50%-_11px)] left-[calc(50%-_46px)] font-medium">
+                  <div className="absolute top-[calc(50%-_11px)] left-[calc(50%-_46px)]  text-xl font-medium">
                     Remember me
                   </div>
                 </div>
               </div>
-              <div className="absolute top-[calc(50%+_52.5px)] left-[calc(50%-_200px)] w-[400px] h-[89px]">
-                <div className="absolute top-[calc(50%-_44.5px)] left-[calc(50%-200px)] rounded-xl [background:linear-gradient(90.57deg,#628eff,#8740cd_53.13%,#580475)] w-[400px] h-[55px]">
-                  <div className="absolute top-[calc(50%-_18px)] left-[calc(50%-_30px)] font-semibold">
+              <div className="absolute top-[calc(50%+_52.5px)] left-[calc(50%-_200px)] w-[400px] my-7">
+                <div className="absolute top-[calc(50%-_44.5px)] left-[calc(50%-200px)] rounded-xl [background:linear-gradient(90.57deg,#628eff,#8740cd_53.13%,#580475)] w-full py-5 ">
+                  <div className="absolute top-[calc(50%-_18px)]  left-[calc(50%-_30px)] py-1 text-5xl font-semibold">
                     Login
                   </div>
                 </div>
@@ -88,6 +89,7 @@ const Login = () => {
           Don’t have an account ? Signup
         </div>
       </div>
+    </div>
     </div>
   );
 };
