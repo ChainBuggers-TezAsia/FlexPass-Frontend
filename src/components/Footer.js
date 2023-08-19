@@ -16,11 +16,11 @@ export default function Footer() {
         <div className="text-aliceblue">
           <div className="mb-2 text-lg font-semibold">Join our community</div>
           <div className="flex gap-1">
-            <img className="w-4 h-4" alt="" src="/iconsocialtwitter.svg" />
-            <img className="w-4 h-4" alt="" src="/iconsocialfacebook.svg" />
-            <img className="w-4 h-4" alt="" src="/iconsocialinstagram.svg" />
-            <img className="w-4 h-4" alt="" src="/iconsocialyoutube.svg" />
-            <img className="w-4 h-4" alt="" src="/iconsocialtele.svg" />
+            <img className="w-4 h-4" alt="" src="../twitter.svg" />
+            <img className="w-4 h-4" alt="" src="../facebook.svg" />
+            <img className="w-4 h-4" alt="" src="../instagram.svg" />
+            <img className="w-4 h-4" alt="" src="../youtube.svg" />
+            <img className="w-4 h-4" alt="" src="../telegram.svg" />
           </div>
         </div>
       </div>
