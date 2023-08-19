@@ -17,7 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header setLogin={setLogin} checkLogin={login} className="z-10" />
+      <Header setLogin={setLogin} checkLogin={login} />
+      {
+        login && <Login/>
+      }
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />

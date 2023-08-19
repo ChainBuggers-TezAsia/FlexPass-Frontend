@@ -11,14 +11,14 @@ export default function SeatSelectionPage() {
 
       {/* Content */}
       <div className="relative z-10">
-        <Header />
+        {/* <Header /> */}
         <main className="container mx-auto mt-10 p-4">
           <h1 className="text-3xl font-semibold mb-4">Select Your Seats</h1>
           {/* Your seat selection components go here */}
         </main>
       </div>
       <div className="absolute bottom-0 w-full">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
