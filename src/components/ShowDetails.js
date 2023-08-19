@@ -12,7 +12,7 @@ export default function ShowDetails() {
             <img src={heartIcon} className='' />
             <div className=' text-white mx-3'>PVR: Sathyam, Royapettah</div>
 
-              <img src={infoIcon} className='' />
+            <img src={infoIcon} className='' />
             <div className=' text-gray-900'>Info</div>
 
           </div>
@@ -24,7 +24,7 @@ export default function ShowDetails() {
           </div>
         </div>
         <div className='flex flex-col'>
-<div></div>
+          <div></div>
         </div>
       </div>
     </div>
