@@ -17,7 +17,6 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
 
       {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" />
       {login && (
@@ -30,9 +29,7 @@ function App() {
       {/* <MovieBanner /> */}
 
       {/* <Navbar /> */}
-=======
       <Header setLogin={setLogin} checkLogin={login} className="z-10" />
->>>>>>> 45443dcae37195055479da3bbb1379ae27b15784
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
