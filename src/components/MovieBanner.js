@@ -1,62 +1,97 @@
 import React from "react";
-import Date from "../components/Date";
-import Time from "../components/Time";
+import Date from "./Date";
 
 export default function MovieBanner() {
   return (
-    <div className="flex flex-col">
-      <img
-        className="relative w-full h-[490px] object-cover"
-        alt=""
-        src="movie-banner.png"
-      />
-      <div className="relative bg-gray w-full h-[12.06rem]">
-        <div className="flex flex-col">
-          <div className="flex flex-row">
-            <div
-              className="relative rounded-[11px] box-border flex flex-row py-[0.17rem] pr-[0.49rem] pl-[0.54rem] items-start justify-start text-left text-[0.63rem] text-gray font-roboto border-[1px] border-solid border-gray"
+    <div>
+      <div>
+        <img
+          className="relative w-full h-[490px] object-cover"
+          alt=""
+          src="movie-banner.png"
+          style={{ zIndex: -1 }}
+        />
+        <span
+          className="absolute top-[60vh] left-[30vw] text-white"
+          style={{ zIndex: 1 }}
+        >
+          <p className="my-1 ml-2" style={{ fontSize: "20px" }}>
+            Release Date: 2 June 2023
+          </p>
+          <p className="my-2" style={{ fontSize: "60px" }}>
+            Spider Man
+          </p>
+        </span>
+      </div>
+      <div className="bg-[#1A142FCC] h-60">
+        <div className="absolute top-[83vh] left-[30vw] text-white">
+          <div className="flex flex-row ">
+            <span
+              className="relative rounded-[11px] box-border flex flex-row py-1 px-6 items-start justify-center text-left text-[12px] text-gray font-roboto border-[1px] border-solid border-gray mx-4"
               style={{
                 borderColor: "rgba(255, 255, 255, 0.5)",
                 color: "rgba(255, 255, 255, 0.5)",
               }}
             >
-              <div className="relative uppercase">Action</div>
-            </div>
-            <div
-              className="relative rounded-[11px] box-border flex flex-row py-[0.17rem] pr-[0.53rem] pl-[0.54rem] items-start justify-start text-left text-[0.63rem] text-gray font-roboto border-[1px] border-solid border-gray"
+              ACTION
+            </span>
+            <span
+              className="relative rounded-[11px] box-border flex flex-row py-1 px-6 items-start justify-center text-left text-[12px] text-gray font-roboto border-[1px] border-solid border-gray mx-4"
               style={{
                 borderColor: "rgba(255, 255, 255, 0.5)",
                 color: "rgba(255, 255, 255, 0.5)",
               }}
             >
-              <div className="relative uppercase">Adventure</div>
-            </div>
-            <div
-              className="relative rounded-[11px] box-border flex flex-row py-[0.17rem] pr-[0.52rem] pl-[0.54rem] items-start justify-start text-left text-[0.63rem] text-gray font-roboto border-[1px] border-solid border-gray"
+              ADVENTURE
+            </span>
+            <span
+              className="relative rounded-[11px] box-border flex flex-row py-1 px-6 items-start justify-center text-left text-[12px] text-gray font-roboto border-[1px] border-solid border-gray mx-4"
               style={{
                 borderColor: "rgba(255, 255, 255, 0.5)",
                 color: "rgba(255, 255, 255, 0.5)",
               }}
             >
-              <div className="relative uppercase">animation</div>
-            </div>
+              ANIMATION
+            </span>
           </div>
-          <div className="flex flex-row">
-            <div className="relative text-[1.13rem] tracking-[0.05em] capitalize font-semibold font-poppins text-white text-left inline-block w-[7.25rem] h-[2.25rem]">
-              Date
-              <div flex flex-col>
-                <Date />
+          <div className="flex flex-row mt-8">
+            <div className="w-[30vw]">
+              <span style={{ fontSize: "24px" }}>Date</span>
+              <div className="flex flex-row my-4" style={{ fontSize: "18 px" }}>
+                <span className="py-3 mr-4"> &lt;</span>
+                <span className="mx-2 text-center">
+                  28 Aug
+                  <br />
+                  Mon
+                </span>
+                <span className="mx-2 text-center">
+                  28 Aug
+                  <br />
+                  Mon
+                </span>
+                <span className="mx-2 text-center">
+                  28 Aug
+                  <br />
+                  Mon
+                </span>
+                <span className="py-3 ml-4"> &gt;</span>
               </div>
             </div>
-
-            <div className="relative text-[1.13rem] tracking-[0.05em] capitalize font-semibold font-poppins text-white text-left inline-block w-[7.25rem] h-[2.25rem]">
-              Available TIme
-              <div flex flex-col>
-                <Time />
+            <div className="w-[30vw]">
+              <span style={{ fontSize: "24px" }}>Available Date</span>
+              <div className="flex flex-row my-7" style={{ fontSize: "18 px" }}>
+                <span className="mr-4"> &lt;</span>
+                <span className="mx-2 text-center">10:30 Pm</span>
+                <span className="mx-2 text-center">11:00 Pm</span>
+                <span className="mx-2 text-center">11:30 Pm</span>
+                <span className="ml-4"> &gt;</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="backdrop-blur-lg absolute top-[60vh] left-[8vw] w-[18vw] h-[50vh] flex content-center m-auto justify-center items-center" style={{zIndex:2, borderRadius:"30px"}}>
+        <img src="nft-picture@2x.png" alt="" className="w-[15vw] h-[45vh]" />
       </div>
     </div>
   );
