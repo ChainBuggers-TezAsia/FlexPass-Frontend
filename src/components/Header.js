@@ -11,7 +11,7 @@ const Header = (props) => {
         />
         <div className="absolute inset-0 bg-gray-200 backdrop-blur-[7.2px] opacity-50 border border-solid border-gray-100" />
       </div>
-      <h1 className="absolute top-1 left-12 text-2xl font-extrabold font-poppins">
+      <h1 className="absolute top-1 left-12 text-[32px] font-extrabold font-[poppins] my-4">
         FlexPass
       </h1>
       <nav className="absolute top-9 left-72 space-x-4">

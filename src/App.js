@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Header setLogin={setLogin} checkLogin={login} className="z-10" />
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
@@ -29,6 +29,7 @@ function App() {
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }
