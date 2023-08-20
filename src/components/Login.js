@@ -54,7 +54,7 @@ export default function LogInPage(props) {
         </div>
       </div>
       <div
-        className="absolute top-10 right-20 text-white text-[32px]"
+        className="absolute cursor-pointer top-10 right-20 text-white text-[32px]"
         style={{ zIndex: 3 }}
         onClick={() => {
           props.setLogin(false);

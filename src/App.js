@@ -12,7 +12,7 @@ import MovieBanner from "../src/components/MovieBanner";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 import SignUpPage from "./pages/SignUpPage";
-import MyTicketsPage from "./pages/MyTicketsPage";
+import MyTicketsPage from "./pages/UserPage";
 
 
 function App() {
