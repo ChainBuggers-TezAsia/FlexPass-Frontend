@@ -17,7 +17,7 @@ export default function TheatreSelectionPage(props) {
       <div className="relative z-10">
         <MovieBanner name={data.name} release={data.release} image={data.image} poster={data.poster}/>
         <div className="container mx-auto mt-10 p-4">
-          <TheatreDetails />
+          <TheatreDetails theatres={data.theatreId}/>
         </div>
       </div>
     </div>

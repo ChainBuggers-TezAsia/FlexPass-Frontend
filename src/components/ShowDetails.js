@@ -3,14 +3,14 @@ import heartIcon from '../assets/icon-heart.png'
 import infoIcon from '../assets/info.png'
 import mobile from '../assets/mobile.png'
 import fnb from '../assets/fnb.png'
-export default function ShowDetails() {
+export default function ShowDetails(props) {
   return (
     <div className='w-full border-b-2 border-gray-700 '>
       <div className='flex  px-7 py-5 '>
         <div className='flex flex-col'>
           <div className='flex items-center my-2'>
             <img src={heartIcon} className='' />
-            <div className=' text-white mx-3'>PVR: Sathyam, Royapettah</div>
+            <div className=' text-white mx-3'>{props.name.name}</div>
 
             <img src={infoIcon} className='' />
             <div className=' text-gray-900'>Info</div>
