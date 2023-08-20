@@ -16,27 +16,18 @@ import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   const [login, setLogin] = useState(false);
+  const [signup, setSignup] = useState(false);
 
   return (
     <div className="App">
-
-      {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" />
-      {login && (
-        <div>
-          <Login />
-        </div>
-      )} */}
-      {/* <SeatSelectionPage /> */}
-
-      {/* <MovieBanner /> */}
-
-      {/* <Navbar /> */}
-      {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" /> */}
+      {
+        signup && <SignUpPage setSignup={setSignup} checkSignup={signup}/>
+      }
       {
         login && <Login setLogin={setLogin} checkLogin={login} />
       }
-      {!login && <BrowserRouter>
-        <Header setLogin={setLogin} checkLogin={login} />
+      {!login && !signup && <BrowserRouter>
+        <Header setLogin={setLogin} checkLogin={login} setSignup={setSignup} checkSignup={signup}/>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route
@@ -45,7 +36,7 @@ function App() {
             element={<TheatreSelectionPage />}
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
-          <Route exact path="/signup" element={<SignUpPage />} />
+          {/* <Route exact path="/signup" element={<SignUpPage />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>}

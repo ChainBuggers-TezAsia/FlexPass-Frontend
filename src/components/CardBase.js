@@ -6,15 +6,10 @@ export default function CardBase() {
   const navigate = useNavigate();
 
   const [movies, setMovies] = useState([]);
-  const x =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRhOGFhNTk5NjRlMGRlYWMyZDU1NzIiLCJpYXQiOjE2OTI0ODg3NDMsImV4cCI6MTY5MjQ5MjM0M30.-lUvKPStId5c7E5_BO4PkkggNI0L9L0cEiZIdqQucaI";
   useEffect(() => {
     axios({
       method: "get",
-      url: `https://flexpass-back.onrender.com/movie/getAllMovies`,
-      headers: {
-        Authorization: `Bearer ${x}`,
-      },
+      url: `https://flexpass-back.onrender.com/movie/getAllMovies`
     })
       .then((response) => {
         // setSplitInto(response.data.userNames)
@@ -38,18 +33,11 @@ export default function CardBase() {
             <div onClick={()=>{
               navigate('/theatreSelection',{state:movie});
             }}>
-              {/* <Link
-                to={{
-                  pathname: "/theatreSelection",
-                  state: {id:1, name:"name"} ,
-                }}
-              > */}
                 <MovieCard
                   name={movie.name}
                   image={movie.image}
                   release={movie.release}
                 />
-              {/* </Link> */}
             </div>
           );
         })}

@@ -1,14 +1,17 @@
 import React from 'react';
 import check from "../assets/check-mark.png";
 
-export default function SignUpPage() {
+export default function SignUpPage(props) {
   return (
     <div className='w-full h-screen flex'>
+      <span className='absolute top-10 left-10 text-[34px]' onClick={()=>{
+         props.setSignup(!props.checkSignup);
+      }}>&lt;--</span>
       
-      <div className='w-3/5 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10'>
+      <div className='w-3/5 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10 rounded-l-[90px]'>
         <div className='flex flex-col items-start justify-start'>
           <div className="relative font-medium">Just some details to get you in.!</div>
-          <div className="relative text-[2.25rem] font-semibold">Signup</div>
+          <div className="relative text-[2.25rem] mb-5 font-semibold">Signup</div>
           <div className='rounded-xl text-white text-[20px] mb-6 box-border w-full py-3 px-5 border-2 border-solid border-white'>
             Username
           </div>
@@ -30,17 +33,17 @@ export default function SignUpPage() {
               Sign Up
             </div>
           </div>
-          <div className="mt-6 text-3xl font-sans font-medium text-center">
+          <div className="mt-6 text-3xl font-sans font-medium text-center mx-auto">
             Already Registered? Login
           </div>
-          <div className='flex'>
-            <div className="mt-6 text-3xl font-sans font-medium text-center">
+          <div className='flex mx-auto'>
+            <div className="mt-6 text-3xl mr-5  font-sans font-medium text-center">
               Terms & Conditions
             </div>
-            <div className="mt-6 text-3xl font-sans font-medium text-center">
+            <div className="mt-6 text-3xl mr-5 font-sans font-medium text-center">
               Support
             </div>
-            <div className="mt-6 text-3xl font-sans font-medium text-center">
+            <div className="mt-6 text-3xl mr-5 font-sans font-medium text-center">
               Customer Care
             </div>
           </div>

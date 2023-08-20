@@ -1,3 +1,4 @@
+import likes from "../assets/likes.png"
 const MovieCard = (props) => {
   const inputDate = new Date(props.release);
   const day = String(inputDate.getDate()).padStart(2, "0");
@@ -26,7 +27,7 @@ const MovieCard = (props) => {
               <img
                 className="absolute h-[65%] w-[26.81%] top-[25%] right-[66.05%] bottom-[10%] left-[7.15%] max-w-full overflow-hidden max-h-full"
                 alt=""
-                src="/vector.svg"
+                src={likes}
               />
               <div className="absolute top-[25%] left-[44.6%] tracking-[0.05em] capitalize">
                 341
