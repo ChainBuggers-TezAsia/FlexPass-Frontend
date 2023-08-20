@@ -22,20 +22,19 @@ function App() {
   return (
     <div className="App">
       {
-        signup && <SignUpPage setSignup={setSignup} checkSignup={signup}/>
+        signup && <SignUpPage setSignup={setSignup} checkSignup={signup} />
       }
 
       {!signup && <BrowserRouter>
-        <Header setLogin={setLogin} checkLogin={login} setSignup={setSignup} checkSignup={signup}/>
+        <Header setLogin={setLogin} checkLogin={login} setSignup={setSignup} checkSignup={signup} />
         <Routes>
           <Route exact path="/" element={<LandingPage setLogin={setLogin} checkLogin={login} />} />
           <Route
             exact
             path="/theatreSelection"
-            element={<TheatreSelectionPage />}
+            element={<TheatreSelectionPage setLogin={setLogin} checkLogin={login} />}
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
-          {/* <Route exact path="/signup" element={<SignUpPage />} /> */}
           <Route exact path="/tickets" element={<MyTicketsPage />} />
         </Routes>
         <Footer />

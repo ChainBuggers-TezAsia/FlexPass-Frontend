@@ -5,7 +5,7 @@ import check from "../assets/check-mark.png";
 export default function LogInPage(props) {
   return (
     <div> {props.login &&
-    <div className="  absolute w-screen h-[85vh] flex justify-center items-center">
+    <div className="  absolute z-10 w-screen h-[85vh] flex justify-center items-center">
       <div className=" rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-[30%] h-[605px] text-left text-white font-noto-sans">
         {" "}
         {/*make position absolute here*/}
