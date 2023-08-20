@@ -24,13 +24,11 @@ function App() {
       {
         signup && <SignUpPage setSignup={setSignup} checkSignup={signup}/>
       }
-      {
-        login && <Login setLogin={setLogin} checkLogin={login} />
-      }
-      {!login && !signup && <BrowserRouter>
+
+      {!signup && <BrowserRouter>
         <Header setLogin={setLogin} checkLogin={login} setSignup={setSignup} checkSignup={signup}/>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/" element={<LandingPage setLogin={setLogin} checkLogin={login} />} />
           <Route
             exact
             path="/theatreSelection"

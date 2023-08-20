@@ -1,14 +1,15 @@
 import React from 'react';
 import check from "../assets/check-mark.png";
+import signup from '../assets/signup-bg.svg'
 
 export default function SignUpPage(props) {
   return (
     <div className='w-full h-screen flex'>
-      <span className='absolute top-10 left-10 text-[34px]' onClick={()=>{
+      <span className='absolute z-10 text-white top-10 left-10 text-[34px]' onClick={()=>{
          props.setSignup(!props.checkSignup);
       }}>&lt;--</span>
-      
-      <div className='w-3/5 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10 rounded-l-[90px]'>
+      <div className=' w-full relative h-screen '><div><img className=' w-full h-screen object-cover' src={signup} alt=''/></div></div>
+      <div className=' w-3/5  absolute right-0 z-10 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10 rounded-l-[90px]'>
         <div className='flex flex-col items-start justify-start'>
           <div className="relative font-medium">Just some details to get you in.!</div>
           <div className="relative text-[2.25rem] mb-5 font-semibold">Signup</div>
