@@ -11,8 +11,14 @@ import SeatSelectionPage from "./pages/SeatSelectionPage";
 import MovieBanner from "../src/components/MovieBanner";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import TheatreSelectionPage from "./pages/TheatreSelectionPage";
+<<<<<<< HEAD
 import LogInPage from "./pages/LogInPage";
 import Data from "./pages/data";
+=======
+import SignUpPage from "./pages/SignUpPage";
+import MyTicketsPage from "./pages/MyTicketsPage";
+
+>>>>>>> 547def526a876b214306d9d4833500dbae432e23
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -32,11 +38,11 @@ function App() {
 
       {/* <Navbar /> */}
       {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" /> */}
-      <Header setLogin={setLogin} checkLogin={login} />
       {
-        login && <Login />
+        login && <Login setLogin={setLogin} checkLogin={login} />
       }
       {!login && <BrowserRouter>
+        <Header setLogin={setLogin} checkLogin={login} />
         <Routes>
           <Route exact path="/" element={<SeatSelectionPage />} />
           <Route
@@ -45,10 +51,11 @@ function App() {
             element={<TheatreSelectionPage />}
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
-          <Route exact path="/s" element={<LogInPage />} />
+          <Route exact path="/signup" element={<SignUpPage />} />
+          <Route exact path="/tickets" element={<MyTicketsPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>}
-      <Footer />
     </div>
   );
 }

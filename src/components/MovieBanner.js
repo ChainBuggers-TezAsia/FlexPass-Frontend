@@ -1,7 +1,11 @@
 import React from "react";
 import moviebg from "../assets/moviebg.png";
 
-export default function MovieBanner() {
+export default function MovieBanner(props) {
+  const inputDate = new Date(props.release);
+  const day = String(inputDate.getDate()).padStart(2, "0");
+  const month = String(inputDate.getMonth() + 1).padStart(2, "0");
+  const year = inputDate.getFullYear();
   return (
     <div>
       <div>
@@ -16,10 +20,10 @@ export default function MovieBanner() {
           style={{ zIndex: 1 }}
         >
           <p className="my-1 ml-2" style={{ fontSize: "20px" }}>
-            Release Date: 2 June 2023
+            {`Release Date: ${day}-${month}-${year}`}
           </p>
           <p className="my-2" style={{ fontSize: "60px" }}>
-            Spider Man
+            {props.name}
           </p>
         </span>
       </div>
@@ -91,7 +95,7 @@ export default function MovieBanner() {
         </div>
       </div>
       <div className=" absolute top-[60vh] left-[8vw] w-[18vw] h-[15vh] flex content-center m-auto justify-center items-center" style={{zIndex:2, borderRadius:"30px"}}>
-        <img src="nft-picture@2x.png" alt="" className="w-[15vw] h-[40vh]" />
+        <img src={props.image} alt="" className="w-[15vw] h-[40vh]" />
       </div>
     </div>
   );

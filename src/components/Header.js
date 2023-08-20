@@ -22,7 +22,7 @@ const Header = (props) => {
         <button
           className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
           onClick={() => {
-            console.log("djcnw",props.checkLogin)
+            // console.log("djcnw",props.checkLogin)
             props.setLogin(!props.checkLogin)
           }}
         >
