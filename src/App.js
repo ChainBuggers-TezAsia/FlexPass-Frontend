@@ -12,6 +12,7 @@ import MovieBanner from "../src/components/MovieBanner";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 import SignUpPage from "./pages/SignUpPage";
+import MyTicketsPage from "./pages/MyTicketsPage";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
           <Route exact path="/signup" element={<SignUpPage />} />
+          <Route exact path="/tickets" element={<MyTicketsPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>}
