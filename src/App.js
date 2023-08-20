@@ -31,11 +31,11 @@ function App() {
 
       {/* <Navbar /> */}
       {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" /> */}
-      <Header setLogin={setLogin} checkLogin={login} />
       {
-        login && <Login />
+        login && <Login setLogin={setLogin} checkLogin={login} />
       }
       {!login && <BrowserRouter>
+      <Header setLogin={setLogin} checkLogin={login} />
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route
@@ -44,10 +44,10 @@ function App() {
             element={<TheatreSelectionPage />}
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
-          <Route exact path="/s" element={<LogInPage />} />
+          {/* <Route exact path="/s" element={<LogInPage />} /> */}
         </Routes>
-      </BrowserRouter>}
       <Footer />
+      </BrowserRouter>}
     </div>
   );
 }
