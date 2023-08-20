@@ -1,38 +1,63 @@
+/* SeatSelector.css */
 .seat-selector {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .seat-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .seat-row {
-    display: flex;
-    gap: 5px;
-  }
-  
-  .seat {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    background-color: #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .seat.selected {
-    background-color: #6feaf6;
-  }
-  
-  .selected-seats {
-    margin-top: 10px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin: 2px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  user-select: none;
+}
+
+.seat.occupied {
+  background-color: #d1d1d1;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #7bc47f;
+  color: white;
+}
+
+.screen {
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  margin: 10px 0;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.footer {
+  margin-top: 40px;
+  color: #888;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}

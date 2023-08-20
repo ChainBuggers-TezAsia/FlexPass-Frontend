@@ -12,6 +12,7 @@ import MovieBanner from "../src/components/MovieBanner";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 import LogInPage from "./pages/LogInPage";
+import Data from "./pages/data";
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -37,7 +38,7 @@ function App() {
       }
       {!login && <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/" element={<SeatSelectionPage />} />
           <Route
             exact
             path="/theatreSelection"
