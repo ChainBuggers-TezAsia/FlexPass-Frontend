@@ -24,10 +24,6 @@ const Header = (props) => {
           FlexPass
         </h1>
       </button>
-      <nav className="absolute top-9 left-72 space-x-4">
-        <a className="text-white hover:text-gray-300">My Tickets</a>
-        <a className="text-white hover:text-gray-300">Wallet</a>
-      </nav>
       <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
         <button
           className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
