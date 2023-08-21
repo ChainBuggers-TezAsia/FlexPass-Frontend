@@ -20,36 +20,24 @@ import TheaterSeat from "./pages/TheaterSeat";
 
 function App() {
   const [login, setLogin] = useState(false);
+  const [signup, setSignup] = useState(false);
 
   return (
     <div className="App">
-
-      {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" />
-      {login && (
-        <div>
-          <Login />
-        </div>
-      )} */}
-      {/* <SeatSelectionPage /> */}
-
-      {/* <MovieBanner /> */}
-
-      {/* <Navbar /> */}
-      {/* <Header setLogin={setLogin} checkLogin={login} className="z-10" /> */}
       {
-        login && <Login setLogin={setLogin} checkLogin={login} />
+        signup && <SignUpPage setSignup={setSignup} checkSignup={signup} />
       }
-      {!login && <BrowserRouter>
-        <Header setLogin={setLogin} checkLogin={login} />
+
+      {!signup && <BrowserRouter>
+        <Header setLogin={setLogin} checkLogin={login} setSignup={setSignup} checkSignup={signup} />
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/" element={<LandingPage setLogin={setLogin} checkLogin={login} />} />
           <Route
             exact
             path="/theatreSelection"
-            element={<TheatreSelectionPage />}
+            element={<TheatreSelectionPage setLogin={setLogin} checkLogin={login} />}
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
-          <Route exact path="/signup" element={<SignUpPage />} />
           <Route exact path="/tickets" element={<MyTicketsPage />} />
           <Route exact path="/seats" element={<TheaterSeat/>} />
         </Routes>

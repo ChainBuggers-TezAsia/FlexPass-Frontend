@@ -12,7 +12,7 @@ export default function MovieBanner(props) {
         <img
           className="relative w-full h-[66vh] object-cover"
           alt=""
-          src={moviebg}
+          src={props.poster}
           style={{ zIndex: 1 }}
         />
         <span
