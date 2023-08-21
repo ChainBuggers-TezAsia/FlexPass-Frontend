@@ -7,6 +7,7 @@ import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 import SeatSelectionPage from './pages/SeatSelectionPage'
 import SignUpPage from "./pages/SignUpPage";
 import UserPage from "./pages/UserPage";
+import PaymentPage from "./pages/PaymentPage";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           />
           <Route exact path="/seatSelection" element={<SeatSelectionPage setLogin={setLogin} checkLogin={login}/>} />
           <Route exact path="/user" element={<UserPage />} />
+          <Route exact path="/payment" element={<PaymentPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>}
