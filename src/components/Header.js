@@ -51,17 +51,15 @@ const Header = (props) => {
           </span>
         </button>
       </nav>}
-      <button
+      {token && <button
           className="absolute top-6 right-10 flex justify-center items-center h-75 w-200 rounded-full bg-[#6851FF]"
           onClick={() => {
             navigate('/user')
           }}
         >
           <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
-          {/* <span className="text-base font-medium text-white z-10 "> */}
           <FaUserCircle className="w-10 h-10"/>
-          {/* </span> */}
-        </button>
+      </button>}
     </header>
   );
 };
