@@ -13,8 +13,7 @@ import TheatreSelectionPage from "./pages/TheatreSelectionPage";
 // import LogInPage from "./pages/LogInPage";
 import Data from "./pages/data";
 import SignUpPage from "./pages/SignUpPage";
-// import MyTicketsPage from "./pages/MyTicketsPage";
-import TheaterSeat from "./pages/TheaterSeat";
+import MyTicketsPage from "./pages/UserPage";
 
 
 function App() {
@@ -36,8 +35,9 @@ function App() {
             path="/theatreSelection"
             element={<TheatreSelectionPage setLogin={setLogin} checkLogin={login} />}
           />
-          {/* <Route exact path="/tickets" element={<MyTicketsPage />} /> */}
-          <Route exact path="/seats" element={<TheaterSeat/>} />
+          <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
+          <Route exact path="/tickets" element={<MyTicketsPage />} />
+          <Route exact path="/user" element={<UserPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>}
