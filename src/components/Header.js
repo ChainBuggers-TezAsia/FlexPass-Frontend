@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
 
 
 const Header = (props) => {
   const navigate = useNavigate();
-
+  const token = localStorage.getItem("jwt_token")
+  console.log("tt",token)
   return (
     <header className="relative w-full h-[5.5rem] overflow-hidden text-white font-inter">
       <div className="absolute inset-0 w-full h-[6.06rem]">
@@ -24,7 +26,7 @@ const Header = (props) => {
           FlexPass
         </h1>
       </button>
-      <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
+      {!token && <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
         <button
           className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
           onClick={() => {
@@ -48,7 +50,18 @@ const Header = (props) => {
             Start now
           </span>
         </button>
-      </nav>
+      </nav>}
+      <button
+          className="absolute top-6 right-10 flex justify-center items-center h-75 w-200 rounded-full bg-[#6851FF]"
+          onClick={() => {
+
+          }}
+        >
+          <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
+          {/* <span className="text-base font-medium text-white z-10 "> */}
+          <FaUserCircle className="w-10 h-10"/>
+          {/* </span> */}
+        </button>
     </header>
   );
 };

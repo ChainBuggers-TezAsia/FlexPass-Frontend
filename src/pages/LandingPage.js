@@ -16,7 +16,7 @@ export default function LandingPage(props) {
 
       {/* Content */}
       <div className="relative z-10"> 
-      <LogInPage  login={props.checkLogin} setLogin={props.setLogin}/>
+      <LogInPage  login={props.checkLogin} setLogin={props.setLogin} setSignup={props.setSignup} signup={props.checkSignup}/>
         <HeroSection />
         <div id="base">
           <CardBase />
