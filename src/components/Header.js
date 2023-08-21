@@ -54,7 +54,7 @@ const Header = (props) => {
       <button
           className="absolute top-6 right-10 flex justify-center items-center h-75 w-200 rounded-full bg-[#6851FF]"
           onClick={() => {
-
+            navigate('/user')
           }}
         >
           <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
