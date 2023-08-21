@@ -92,17 +92,6 @@ export default function LogInPage(props) {
               <div className="text-center text-base font-medium mb-5">
                 Forgot password ?
               </div>
-              <div className="flex justify-center items-center mb-3">
-                <div className="border-t border-dimgray-100 flex-grow mx-4"></div>
-                <p className="text-base font-base text-dimgray-100 mx-2">OR</p>
-                <div className="border-t border-dimgray-100 flex-grow mx-4"></div>
-              </div>
-              <div className="mt-2 flex justify-center items-center text-dimgray-200">
-                <div className="w-8 h-6">+91</div>
-                <div className="w-56 h-6 border-b-2 border-dimgray-300">
-                  Continue with mobile number
-                </div>
-              </div>
               <div
                 className="mt-6 text-3xl font-sans font-medium text-center cursor-pointer"
                 onClick={() => {
