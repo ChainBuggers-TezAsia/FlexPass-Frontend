@@ -27,11 +27,8 @@ export default function TheaterSeat(props) {
         <div className="text-white capitalize font-semibold  text-[4rem] px-5">
           {theatre.name}
         </div>
-        <div className="text-white capitalize font-semibold  text-[2rem] px-6">
-          Seats:{" "}
-        </div>
       </div>
-      <div className=" w-full h-[120vh] bg-[#242333]">
+      <div className=" w-full h-[125vh] bg-[#242333]">
         <div className=" w-full h-full flex flex-col items-center py-10 px-16">
           <div>
             <img src={screen} alt="" />
@@ -411,6 +408,11 @@ export default function TheaterSeat(props) {
               </div>
             </div>
           </div>
+          <button className="rounded-full bg-blue-900">
+            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-3xl text-center font-noto-sans px-4 py-4">
+              Book now
+            </div>
+          </button>
         </div>
       </div>
     </div>
