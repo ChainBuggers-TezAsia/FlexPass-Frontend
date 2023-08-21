@@ -12,7 +12,7 @@ export default function TheaterSeat() {
   console.log("det", seats)
 
   return (
-    <div>
+    <div className="relative z-0">
       <MovieBanner
         name={movie.name}
         release={movie.release}
