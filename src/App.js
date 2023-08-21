@@ -11,10 +11,11 @@ import SeatSelectionPage from "./pages/SeatSelectionPage";
 import MovieBanner from "../src/components/MovieBanner";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import TheatreSelectionPage from "./pages/TheatreSelectionPage";
-import LogInPage from "./pages/LogInPage";
+// import LogInPage from "./pages/LogInPage";
 import Data from "./pages/data";
 import SignUpPage from "./pages/SignUpPage";
 import MyTicketsPage from "./pages/MyTicketsPage";
+import TheaterSeat from "./pages/TheaterSeat";
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
       {!login && <BrowserRouter>
         <Header setLogin={setLogin} checkLogin={login} />
         <Routes>
-          <Route exact path="/" element={<SeatSelectionPage />} />
+          <Route exact path="/" element={<LandingPage />} />
           <Route
             exact
             path="/theatreSelection"
@@ -50,6 +51,7 @@ function App() {
           <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
           <Route exact path="/signup" element={<SignUpPage />} />
           <Route exact path="/tickets" element={<MyTicketsPage />} />
+          <Route exact path="/seats" element={<TheaterSeat/>} />
         </Routes>
         <Footer />
       </BrowserRouter>}
