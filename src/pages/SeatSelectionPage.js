@@ -28,7 +28,7 @@ export default function TheaterSeat(props) {
           {theatre.name}
         </div>
       </div>
-      <div className=" w-full h-[125vh] bg-[#242333]">
+      <div className=" w-full h-[140vh] bg-[#242333]">
         <div className=" w-full h-full flex flex-col items-center py-10 px-16">
           <div>
             <img src={screen} alt="" />
