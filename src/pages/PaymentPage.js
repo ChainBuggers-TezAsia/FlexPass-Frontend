@@ -1,13 +1,13 @@
 import React from 'react'
-import PaySummary from '../components/PaySummary'
 import bg from '../assets/bg.svg'
+import OrderSummary from '../components/PaySummary'
 
 export default function PaymentPage() {
     return (
-        <div className='h-screen w-full flex'>
+        <div className='h-screen w-full flex justify-center items-center'>
             <img className=' w-full h-screen object-cover' alt='' src={bg} />
-            <div className='absolute z-10 ml-auto'>
-                <PaySummary />
+            <div className='absolute z-10 w-6/12 h-1/4'>
+                <OrderSummary />
             </div>
         </div>
     )
