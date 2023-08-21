@@ -28,7 +28,7 @@ function App() {
             path="/theatreSelection"
             element={<TheatreSelectionPage setLogin={setLogin} checkLogin={login} />}
           />
-          <Route exact path="/seatSelection" element={<SeatSelectionPage />} />
+          <Route exact path="/seatSelection" element={<SeatSelectionPage setLogin={setLogin} checkLogin={login}/>} />
           <Route exact path="/user" element={<UserPage />} />
         </Routes>
         <Footer />

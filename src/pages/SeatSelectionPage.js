@@ -3,16 +3,19 @@ import { useLocation } from "react-router-dom";
 import screen from "../assets/screen.png";
 import Seats from "../components/Seats.js";
 import MovieBanner from "../components/MovieBanner";
+import LogInPage from "../components/Login";
 
-export default function TheaterSeat() {
+export default function TheaterSeat(props) {
   const location = useLocation();
   const theatre = location.state.theatre;
   const movie = location.state.movie;
   const [seats, setSeats] = useState([]);
-  console.log("det", seats)
+  console.log("det", seats);
 
   return (
     <div className="relative z-0">
+      <LogInPage login={props.checkLogin} setLogin={props.setLogin} />
+
       <MovieBanner
         name={movie.name}
         release={movie.release}
@@ -44,17 +47,29 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"A-" + (index + 1)} seats={seats} setSeats={setSeats}/>
+                  <Seats
+                    seatNo={"A-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"A-" + (index + 9)} />
+                  <Seats
+                    seatNo={"A-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"A-" + (index + 23)} />
+                  <Seats
+                    seatNo={"A-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -62,17 +77,29 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"B-" + (index + 1)} />
+                  <Seats
+                    seatNo={"B-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"B-" + (index + 9)} />
+                  <Seats
+                    seatNo={"B-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"B-" + (index + 23)} />
+                  <Seats
+                    seatNo={"B-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -80,17 +107,29 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"C-" + (index + 1)} />
+                  <Seats
+                    seatNo={"C-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"C-" + (index + 9)} />
+                  <Seats
+                    seatNo={"C-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"C-" + (index + 23)} />
+                  <Seats
+                    seatNo={"C-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -98,17 +137,29 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"D-" + (index + 1)} />
+                  <Seats
+                    seatNo={"D-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"D-" + (index + 9)} />
+                  <Seats
+                    seatNo={"D-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"D-" + (index + 23)} />
+                  <Seats
+                    seatNo={"D-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -116,17 +167,29 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"E-" + (index + 1)} />
+                  <Seats
+                    seatNo={"E-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"E-" + (index + 9)} />
+                  <Seats
+                    seatNo={"E-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"E-" + (index + 23)} />
+                  <Seats
+                    seatNo={"E-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -134,89 +197,149 @@ export default function TheaterSeat() {
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"F-" + (index + 1)} />
+                  <Seats
+                    seatNo={"F-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
                 {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"F-" + (index + 9)} />
+                  <Seats
+                    seatNo={"F-" + (index + 9)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
                 {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"F-" + (index + 23)} />
+                  <Seats
+                    seatNo={"F-" + (index + 23)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
             <div className=" col-span-1 text-white mt-10">G</div>
             <div className=" col-span-11 w-full mt-10 grid grid-cols-4 gap-1">
               <div className=" flex justify-end mx-8 col-span-1">
-              {Array.from({ length: 4 }, (_, index) => (
-                  <Seats seatNo={"G-" + (index + 1)} />
+                {Array.from({ length: 4 }, (_, index) => (
+                  <Seats
+                    seatNo={"G-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
-              {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"G-" + (index + 5)} />
+                {Array.from({ length: 14 }, (_, index) => (
+                  <Seats
+                    seatNo={"G-" + (index + 5)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
-              {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"G-" + (index + 19)} />
+                {Array.from({ length: 8 }, (_, index) => (
+                  <Seats
+                    seatNo={"G-" + (index + 19)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
             <div className=" col-span-1 text-white">H</div>
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
-            <div className=" flex justify-end mx-8 col-span-1">
-              {Array.from({ length: 4 }, (_, index) => (
-                  <Seats seatNo={"H-" + (index + 1)} />
+              <div className=" flex justify-end mx-8 col-span-1">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <Seats
+                    seatNo={"H-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
-              {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"H-" + (index + 5)} />
+                {Array.from({ length: 14 }, (_, index) => (
+                  <Seats
+                    seatNo={"H-" + (index + 5)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
-              {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"H-" + (index + 19)} />
+                {Array.from({ length: 8 }, (_, index) => (
+                  <Seats
+                    seatNo={"H-" + (index + 19)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
             <div className=" col-span-1 text-white">I</div>
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
-            <div className=" flex justify-end mx-8 col-span-1">
-              {Array.from({ length: 4 }, (_, index) => (
-                  <Seats seatNo={"I-" + (index + 1)} />
+              <div className=" flex justify-end mx-8 col-span-1">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <Seats
+                    seatNo={"I-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
-              {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"I-" + (index + 5)} />
+                {Array.from({ length: 14 }, (_, index) => (
+                  <Seats
+                    seatNo={"I-" + (index + 5)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
-              {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"I-" + (index + 19)} />
+                {Array.from({ length: 8 }, (_, index) => (
+                  <Seats
+                    seatNo={"I-" + (index + 19)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
             <div className=" col-span-1 text-white">J</div>
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
-            <div className=" flex justify-end mx-8 col-span-1">
-              {Array.from({ length: 4 }, (_, index) => (
-                  <Seats seatNo={"J-" + (index + 1)} />
+              <div className=" flex justify-end mx-8 col-span-1">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <Seats
+                    seatNo={"J-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
-              {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"J-" + (index + 5)} />
+                {Array.from({ length: 14 }, (_, index) => (
+                  <Seats
+                    seatNo={"J-" + (index + 5)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
-              {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"J-" + (index + 19)} />
+                {Array.from({ length: 8 }, (_, index) => (
+                  <Seats
+                    seatNo={"J-" + (index + 19)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
@@ -227,26 +350,42 @@ export default function TheaterSeat() {
             <div className=" col-span-1 text-white">K</div>
             <div className=" col-span-11 w-full grid grid-cols-4 gap-1">
               <div className=" flex justify-end mx-8 col-span-1">
-              {Array.from({ length: 7 }, (_, index) => (
-                  <Seats seatNo={"K-" + (index + 1)} />
+                {Array.from({ length: 7 }, (_, index) => (
+                  <Seats
+                    seatNo={"K-" + (index + 1)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" w-full flex justify-center items-center col-span-2">
-              {Array.from({ length: 14 }, (_, index) => (
-                  <Seats seatNo={"K-" + (index + 8)} />
+                {Array.from({ length: 14 }, (_, index) => (
+                  <Seats
+                    seatNo={"K-" + (index + 8)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
               <div className=" flex col-span-1">
-              {Array.from({ length: 8 }, (_, index) => (
-                  <Seats seatNo={"K-" + (index + 22)} />
+                {Array.from({ length: 8 }, (_, index) => (
+                  <Seats
+                    seatNo={"K-" + (index + 22)}
+                    seats={seats}
+                    setSeats={setSeats}
+                  />
                 ))}
               </div>
             </div>
             <div className=" col-span-1 text-white">L</div>
             <div className=" col-span-11 w-full flex mx-6">
-            {Array.from({ length: 34 }, (_, index) => (
-                  <Seats seatNo={"L-" + (index + 1)} />
-                ))}
+              {Array.from({ length: 34 }, (_, index) => (
+                <Seats
+                  seatNo={"L-" + (index + 1)}
+                  seats={seats}
+                  setSeats={setSeats}
+                />
+              ))}
             </div>
           </div>
 
