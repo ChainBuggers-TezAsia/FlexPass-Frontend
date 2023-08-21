@@ -4,6 +4,7 @@ import infoIcon from '../assets/info.png'
 import mobile from '../assets/mobile.png'
 import fnb from '../assets/fnb.png'
 export default function ShowDetails(props) {
+  // console.log("che", props.name)
   return (
     <div className='w-full border-b-2 border-gray-700 '>
       <div className='flex  px-7 py-5 '>

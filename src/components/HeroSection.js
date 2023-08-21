@@ -8,9 +8,13 @@ export default function HeroSection() {
         <div className="text-[2.5rem] leading-[3.31rem]">Unforgettable era of entertainment through our gateway to exceptional shows and experiences!</div>
         {/* <div className="text-[2.5rem] leading-[3.31rem]">exceptional shows and experiences!</div> */}
       </div>
-        <div className="py-20">
+      
+        <div className="py-20" >
+          <a href="#base">
           <img src="../Button.svg" alt="" />
+          </a>
         </div>
+
       </div>
       <div>
         <img

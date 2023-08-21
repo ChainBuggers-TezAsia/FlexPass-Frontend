@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import MovieCard from "./MovieCard";
-export default function CardBase() {
+export default function   CardBase() {
   const navigate = useNavigate();
 
   const [movies, setMovies] = useState([]);

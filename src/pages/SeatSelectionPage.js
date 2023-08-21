@@ -1,17 +1,22 @@
 import React,{useState} from "react";
+import { useLocation } from 'react-router-dom';
 import screen from "../assets/screen.png";
 import Seats from "../components/Seats.js";
 import MovieBanner from '../components/MovieBanner';
 
 
 export default function TheaterSeat() {
+  const location = useLocation()
+  const theatre = location.state.theatre
+  const movie = location.state.movie
+  // console.log("det", theatre)
 
   return (
     <div >
-    <MovieBanner/>
+    <MovieBanner  name={movie.name} release={movie.release} image={movie.image} poster={movie.poster}/>
     
       <div className=" w-full h-44 bg-[#242333]">
-      <div className='text-white capitalize font-semibold  text-[4rem] px-5'>Movie Theater</div>
+      <div className='text-white capitalize font-semibold  text-[4rem] px-5'>{theatre.name}</div>
       <div className='text-white capitalize font-semibold  text-[2rem] px-6'>Seats: </div>
       </div>
       <div className=" w-full h-[120vh] bg-[#242333]">
