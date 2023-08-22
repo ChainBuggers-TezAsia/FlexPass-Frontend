@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 
-
 const Header = (props) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt_token")

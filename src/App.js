@@ -12,7 +12,10 @@ import PaymentPage from "./pages/PaymentPage";
 function App() {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
+  const [userData, setUserData] = useState({});
+
   // const [checkLog, setCheckLog] = useState("")
+  // console.log("log", userData)
 
   var now = new Date().getTime();
   var localData = localStorage.getItem("jwt_token");
@@ -25,7 +28,8 @@ function App() {
         localStorage.clear();
       }
     }, 1000);
-  };
+  }
+  // localStorage.clear();
 
   return (
     <div className="App">
@@ -34,6 +38,7 @@ function App() {
           setSignup={setSignup}
           checkSignup={signup}
           setLogin={setLogin}
+          setUserData={setUserData}
           // checkLogin={login}
         />
       )}
@@ -56,6 +61,7 @@ function App() {
                   checkLogin={login}
                   setSignup={setSignup}
                   checkSignup={signup}
+                  setUserData={setUserData}
                 />
               }
             />
@@ -63,17 +69,35 @@ function App() {
               exact
               path="/theatreSelection"
               element={
-                <TheatreSelectionPage setLogin={setLogin} checkLogin={login} />
+                <TheatreSelectionPage
+                  setLogin={setLogin}
+                  checkLogin={login}
+                  setSignup={setSignup}
+                  checkSignup={signup}
+                  setUserData={setUserData}
+                />
               }
             />
             <Route
               exact
               path="/seatSelection"
               element={
-                <SeatSelectionPage setLogin={setLogin} checkLogin={login} />
+                <SeatSelectionPage
+                  setLogin={setLogin}
+                  checkLogin={login}
+                  setSignup={setSignup}
+                  checkSignup={signup}
+                  setUserData={setUserData}
+                />
               }
             />
-            <Route exact path="/user" element={<UserPage />} />
+            <Route
+              exact
+              path="/user"
+              element={
+                <UserPage setUserData={setUserData} userData={userData} />
+              }
+            />
             <Route exact path="/payment" element={<PaymentPage />} />
           </Routes>
           <Footer />

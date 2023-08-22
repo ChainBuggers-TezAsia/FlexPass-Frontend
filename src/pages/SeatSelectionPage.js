@@ -11,11 +11,12 @@ export default function TheaterSeat(props) {
   const theatre = location.state.theatre;
   const movie = location.state.movie;
   const [seats, setSeats] = useState([]);
-  console.log("det", seats);
+  // console.log("det", seats);
+const token = localStorage.getItem("jwt_token")
 
   return (
     <div className="relative z-0">
-      <LogInPage login={props.checkLogin} setLogin={props.setLogin} />
+      <LogInPage login={props.checkLogin} setLogin={props.setLogin} setSignup={props.setSignup} signup={props.checkSignup} setUserData={props.setUserData}/>
 
       <MovieBanner
         name={movie.name}
@@ -38,7 +39,7 @@ export default function TheaterSeat(props) {
 
           <div className=" w-full grid grid-cols-12 my-2">
             <div className=" col-span-12 flex text-white">
-              <div>BUDGET-Rs. 150</div>
+              <div>BUDGET-Rs. 250</div>
             </div>
             <div className="w-full col-span-12 border border-gray-50"></div>
             <div className=" col-span-1 text-white">A</div>
@@ -342,7 +343,7 @@ export default function TheaterSeat(props) {
               </div>
             </div>
             <div className=" col-span-12 mt-10 flex text-white">
-              <div>ELITE-Rs. 202.84</div>
+              <div>ELITE-Rs. 350</div>
             </div>
             <div className=" w-full border col-span-12  border-gray-50"></div>
             <div className=" col-span-1 text-white">K</div>
@@ -408,7 +409,12 @@ export default function TheaterSeat(props) {
           </div>
           <button className="rounded-full bg-blue-900 my-4">
             <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4" onClick={() => {
-              navigate('/payment')
+              if(token && seats.length>0){
+              navigate('/payment', {state:seats})
+              }
+              if(!token){
+                props.setLogin(true);
+              }
             }}>
               Book now
             </div>

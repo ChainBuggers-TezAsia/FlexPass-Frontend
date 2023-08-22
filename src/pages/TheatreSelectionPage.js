@@ -11,7 +11,7 @@ export default function TheatreSelectionPage(props) {
   console.log("data", data)
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <LogInPage login={props.checkLogin} setLogin={props.setLogin} />
+      <LogInPage login={props.checkLogin} setLogin={props.setLogin} setSignup={props.setSignup} signup={props.checkSignup} setUserData={props.setUserData}/>
       {/* Background Image */}
       <img className="absolute top-0 w-full h-full object-cover -z-10" src={bgImg} alt="" />
 

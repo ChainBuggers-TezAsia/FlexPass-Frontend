@@ -23,15 +23,17 @@ function handleConnectWallet() {
   requestPermissions();
 }
 
-export default function UserDetails() {
+export default function UserDetails(props) {
+  console.log("log",props.userData)
+
   return (
     <div className='flex flex-col cursor-pointer text-semibold text-white font-poppins font-semibold justify-center items-center'>
       {/* Header */}
       <div className='px-14 py-12 flex items-center'>
         <img className='mr-5' src={profileImg} />
         <div className='flex flex-col'>
-          <div className='text-5xl'>Elie James</div>
-          <div className='font-3xl'>+91 9381215863</div>
+          <div className='text-5xl'>{props.userData.name}</div>
+          <div className='font-3xl'>+91 {props.userData.phone}</div>
         </div>
       </div>
       {/* Body */}

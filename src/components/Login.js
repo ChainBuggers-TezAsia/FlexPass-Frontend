@@ -6,6 +6,7 @@ export default function LogInPage(props) {
   const [see, setSee] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [data, setData]= useState({})
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,17 +14,20 @@ export default function LogInPage(props) {
     // console.log(data);
     axios({
       method: "post",
-      url: "https://flexpass-back.onrender.com/user/login",
+      // url: "https://flexpass-back.onrender.com/user/login",
+      url: "http://127.0.0.1:8000/user/login",
       data: { email: email, password: password.toString() },
     })
       .then(function (response) {
         localStorage.setItem("jwt_token", JSON.stringify({token:response.data.user.token, time:new Date().getTime()}));
-        // console.log(response);
+        props.setUserData(response.data.user)
+        // console.log("ress",data);
         props.setLogin(!props.login);
       })
       .catch(function (error) {
         console.log(error);
       });
+      // console.log("ress",data);
   };
 
   return (

@@ -18,16 +18,18 @@ export default function SignUpPage(props) {
     else {
       axios({
         method: "post",
-        url: "https://flexpass-back.onrender.com/user/signup",
+        // url: "https://flexpass-back.onrender.com/user/signup",
+        url: "http://127.0.0.1:8000/user/signup",
         data: {
           name: name,
-          phone: phone,
           email: email,
+          phone: phone,
           password: password.toString(),
         },
       })
         .then(function (response) {
           localStorage.setItem("jwt_token", JSON.stringify({token:response.data.user.token, time:new Date().getTime()}));
+          props.setUserData(response.data.user)
           console.log(response);
           props.setSignup(!props.checkSignup);
         })
