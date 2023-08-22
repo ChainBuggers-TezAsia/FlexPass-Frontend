@@ -27,7 +27,7 @@ export default function SignUpPage(props) {
         },
       })
         .then(function (response) {
-          localStorage.setItem("jwt_token", response.data.user.token);
+          localStorage.setItem("jwt_token", JSON.stringify({token:response.data.user.token, time:new Date().getTime()}));
           console.log(response);
           props.setSignup(!props.checkSignup);
         })

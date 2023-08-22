@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import screen from "../assets/screen.png";
 import Seats from "../components/Seats.js";
 import MovieBanner from "../components/MovieBanner";
@@ -7,6 +7,7 @@ import LogInPage from "../components/Login";
 
 export default function TheaterSeat(props) {
   const location = useLocation();
+  const navigate = useNavigate();
   const theatre = location.state.theatre;
   const movie = location.state.movie;
   const [seats, setSeats] = useState([]);
@@ -409,7 +410,9 @@ export default function TheaterSeat(props) {
             </div>
           </div>
           <button className="rounded-full bg-blue-900">
-            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4">
+            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4" onClick={()=>{
+              navigate('/payment')
+            }}>
               Book now
             </div>
           </button>

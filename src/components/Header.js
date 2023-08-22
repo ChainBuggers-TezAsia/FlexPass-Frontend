@@ -26,7 +26,7 @@ const Header = (props) => {
           FlexPass
         </h1>
       </button>
-      {!token && <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
+      {!token  && <nav className="absolute top-6 right-10 space-x-4 flex flex-row">
         <button
           className="flex justify-center items-center relative h-75 w-200 rounded-full border border-solid border-white bg-transparent"
           onClick={() => {
