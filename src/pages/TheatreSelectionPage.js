@@ -13,12 +13,12 @@ export default function TheatreSelectionPage(props) {
     <div className="relative min-h-screen overflow-x-hidden">
       <LogInPage login={props.checkLogin} setLogin={props.setLogin} />
       {/* Background Image */}
-      <img className="absolute top-0 w-full h-full object-cover  -z-10" src={bgImg} alt="" />
+      <img className="absolute top-0 w-full h-full object-cover -z-10" src={bgImg} alt="" />
 
       {/* Content */}
       <div className="relative z-0">
         <MovieBanner  name={data.name} release={data.release} image={data.image} poster={data.poster} />
-        <div className="container mx-auto mt-10 p-4">
+        <div className="mx-auto mt-10 p-4">
           <TheatreDetails theatres={data.theatreId} movie={data}/>
         </div>
       </div>

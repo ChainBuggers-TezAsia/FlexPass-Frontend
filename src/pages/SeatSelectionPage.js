@@ -386,31 +386,28 @@ export default function TheaterSeat(props) {
               ))}
             </div>
           </div>
-
-          <div className=" w-full  flex flex-col justify-center items-center my-6">
-            <div className=" w-full grid grid-cols-2">
+          <div className="my-8">
+            <div className="grid grid-rows-2 grid-flow-col gap-7">
               <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-gray-800 m-1"></div>
-                <div className=" text-white text-3xl mx-1">Available</div>
+                <div className=" w-7 h-6 rounded-t-full bg-gray-800"></div>
+                <div className=" text-white text-3xl mx-2">Available Seats</div>
               </div>
               <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-green-500 m-1"></div>
-                <div className=" text-white text-3xl mx-1">Selected</div>
-              </div>
-            </div>
-            <div className=" w-full grid grid-cols-2">
-              <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-orange m-1"></div>
-                <div className=" text-white text-3xl mx-1">Resell Seat</div>
+                <div className=" w-7 h-6 rounded-t-full bg-green-500"></div>
+                <div className=" text-white text-3xl mx-2">Selected Seats</div>
               </div>
               <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-cyan-400 m-1"></div>
-                <div className=" text-white text-3xl mx-1">Booked</div>
+                <div className=" w-7 h-6 rounded-t-full bg-orange "></div>
+                <div className=" text-white text-3xl mx-2">Resell Seats</div>
+              </div>
+              <div className=" flex justify-center items-center">
+                <div className=" w-7 h-6 rounded-t-full bg-cyan-400"></div>
+                <div className=" text-white text-3xl mx-2">Sold Seats</div>
               </div>
             </div>
           </div>
-          <button className="rounded-full bg-blue-900">
-            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4" onClick={()=>{
+          <button className="rounded-full bg-blue-900 my-4">
+            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4" onClick={() => {
               navigate('/payment')
             }}>
               Book now

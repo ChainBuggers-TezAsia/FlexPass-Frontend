@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { PiEyeClosedBold, PiEyeBold } from "react-icons/pi";
 import axios from "axios";
-import bg from "../assets/signup-bg.svg";
-import eye from "../assets/password-eye.png";
 import check from "../assets/check-mark.png";
 export default function LogInPage(props) {
   const [see, setSee] = useState(false);
@@ -89,7 +87,7 @@ export default function LogInPage(props) {
                   Login
                 </div>
               </div>
-              <div className="text-center text-base font-medium mb-5">
+              <div className="text-center text-base font-medium mb-3">
                 Forgot password ?
               </div>
               <div
