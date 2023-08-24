@@ -402,7 +402,9 @@ const token = localStorage.getItem("jwt_token")
                 <div className=" text-white text-3xl mx-2">Resell Seats</div>
               </div>
               <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-cyan-400"></div>
+                <div className=" w-7 h-6 rounded-t-full bg-cyan-400">
+                  
+                </div>
                 <div className=" text-white text-3xl mx-2">Sold Seats</div>
               </div>
             </div>

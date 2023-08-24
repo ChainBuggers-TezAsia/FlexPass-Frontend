@@ -185,9 +185,8 @@ export default function UserDetails(props) {
       </div>
       <div className="flex flex-col items-center my-5">
         <button
-          className={`rounded-2xl ${
-            props.button === 2 ? "bg-transparent" : "bg-white"
-          } my-5`}
+          className={`rounded-2xl ${props.button === 2 ? "bg-transparent" : "bg-white"
+            } my-5`}
         >
           <div className={`rounded-[10px] w-48 h-16  ${
             props.button === 2 ? "text-white" : "text-[#333333]"
@@ -206,9 +205,8 @@ export default function UserDetails(props) {
           </div>
         </button>
         <button
-          className={`rounded-2xl ${
-            props.button === 1 ? "bg-transparent" : "bg-white"
-          } my-5`}
+          className={`rounded-2xl ${props.button === 1 ? "bg-transparent" : "bg-white"
+            } my-5`}
         >
           <div className={`rounded-[10px] w-48 h-16  ${
             props.button === 1 ? "text-white" : "text-[#333333]"
