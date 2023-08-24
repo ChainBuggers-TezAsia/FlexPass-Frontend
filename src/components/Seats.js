@@ -7,10 +7,13 @@ export default function Seats(props) {
       <div
         onClick={() => {
           // console.log("pro",props.seatNo.slice(2))
-          setIsActive(!isActive);
-          if (!isActive) {
-            props.setSeats(props.seats.concat(props.seatNo));
-          } else {
+          // setIsActive(!isActive);
+          // if (!isActive ) {
+            if (props.seats.length<5) {
+              setIsActive(true);
+              props.setSeats(props.seats.concat(props.seatNo));
+            } else {
+            setIsActive(false);
             props.setSeats(props.seats.filter((seat) => seat !== props.seatNo));
           }
         }}
