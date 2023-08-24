@@ -152,25 +152,8 @@ export default function UserDetails(props) {
   const handleTicket = () => {
     props.setButton(1);
   };
-
-  const handleConnectWallet = async () => {
-    try {
-      const available = await TempleWallet.isAvailable();
-      if (!available) {
-        console.log("Temple Wallet is not available");
-        return;
-      }
-
-      const wallet = new TempleWallet("Flexpass");
-      await wallet.connect("ghostnet");
-
-      Tezos.setWalletProvider(wallet);
-
-      const pkh = await wallet.getPKH();
-      console.log(`Connected with address: ${pkh}`);
-    } catch (error) {
-      console.error("Error connecting wallet:", error);
-    }
+  const handleWallet = () => {
+    props.setButton(2);
   };
 
   return (
