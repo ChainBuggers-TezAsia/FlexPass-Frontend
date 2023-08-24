@@ -33,7 +33,6 @@ export default function UserDetails(props) {
   };
   const handleWallet = () => {
     props.setButton(2);
-    requestPermissions()
   };
   console.log("log", props.userData);
 
