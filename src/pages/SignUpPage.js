@@ -53,7 +53,7 @@ export default function SignUpPage(props) {
           <img className=" w-full h-screen object-cover" src={signup} alt="" />
         </div>
       </div>
-      <div className=" w-3/5  absolute right-0 z-10 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10 rounded-l-[90px]">
+      <div className=" w-3/5 absolute right-0 z-10 h-screen  ml-auto text-left text-base bg-[#5952ac] text-white font-noto-sans px-36 py-10 rounded-l-[90px]">
         <div className="flex flex-col items-start justify-start">
           <div className="relative font-medium">
             Just some details to get you in.!
