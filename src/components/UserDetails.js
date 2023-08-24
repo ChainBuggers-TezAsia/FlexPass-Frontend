@@ -138,7 +138,7 @@
 //     </div>
 //   );
 // }
-import profileImg from "../assets/profile-img.png";
+import profileImg from "../assets/profile-img.jpg";
 import React from "react";
 import { BsTicketPerforatedFill } from "react-icons/bs";
 import { FaWallet } from "react-icons/fa";
