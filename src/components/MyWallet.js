@@ -1,13 +1,24 @@
 import React from 'react'
 import { TezosToolkit } from "@taquito/taquito";
 import { TempleWallet } from '@temple-wallet/dapp';
+import { RpcClient } from '@taquito/rpc';
+
 
 const Tezos = new TezosToolkit('https://testnet-tezos.giganode.io');
 
 export default function UserDetails(props) {
-  const handleTicket = () => {
-    props.setButton(1);
-  };
+  // const handleTicket = () => {
+  //   props.setButton(1);
+  // };
+
+  // const balanceDeBhadwe = async (connectedWallet) => {
+  //   try {
+  //     const balance = await Tezos.tz.getBalance(connectedWallet.pkh);
+  //     console.log(`Balance: ${balance}`);
+  //   } catch (error) {
+  //     console.error("Error fetching balance:", error);
+  //   }
+  // };
 
   const handleConnectWallet = async () => {
     try {
@@ -22,12 +33,45 @@ export default function UserDetails(props) {
 
       Tezos.setWalletProvider(wallet);
 
-      const pkh = await wallet.getPKH();
+      const pkh = await Tezos.wallet.pkh();
       console.log(`Connected with address: ${pkh}`);
+
+      // Call the balanceDeBhadwe function here
+      // await balanceDeBhadwe(wallet);
     } catch (error) {
       console.error("Error connecting wallet:", error);
     }
   };
+
+  // const handleConnectWallet = async () => {
+  //   try {
+  //     const available = await TempleWallet.isAvailable();
+  //     if (!available) {
+  //       console.log("Temple Wallet is not available");
+  //       return;
+  //     }
+
+  //     const wallet = new TempleWallet("Flexpass");
+  //     await wallet.connect("ghostnet");
+
+  //     Tezos.setWalletProvider(wallet);
+  
+  //     const pkh = await wallet.getPKH();
+  //     console.log(`Connected with address: ${pkh}`);
+  //   } catch (error) {
+  //     console.error("Error connecting wallet:", error);
+  //   }
+
+    // const balance = await Tezos.tz.getBalance(handleConnectWallet.getPKH()); 
+
+  // const balanceOfWallet = async () => {
+  //   try {
+  //     const balance = await Tezos.tz.getBalance(handleConnectWallet.wallet.getPKH());
+  //     console.log(`Balance: ${balance}`);
+  //   } catch (error) {
+  //     console.error("Error fetching balance:", error);
+  //   }
+  // };
 
   return (
     <div className="mx-5 my-5">
@@ -40,6 +84,7 @@ export default function UserDetails(props) {
             className="flex justify-center items-center relative h-75 w-200 rounded-full bg-[#6851FF]"
             onClick={() => {
               handleConnectWallet()
+              // balanceOfWallet()
             }}
           >
             <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
