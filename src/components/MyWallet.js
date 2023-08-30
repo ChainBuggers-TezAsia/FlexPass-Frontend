@@ -1,8 +1,7 @@
 import React from 'react'
 import { TezosToolkit } from "@taquito/taquito";
 import { TempleWallet } from '@temple-wallet/dapp';
-import { RpcClient } from '@taquito/rpc';
-
+import TxnActivity from './TxnActivity';
 
 const Tezos = new TezosToolkit('https://testnet-tezos.giganode.io');
 
@@ -93,6 +92,12 @@ export default function UserDetails(props) {
             </span>
           </button>
         </div>
+      </div>
+      <div className="mt-10 rounded-lg bg-[#242333] py-10 px-20">
+        <div className='h-20 text-white'>
+            Wallet Activity
+        </div>
+        <TxnActivity/>
       </div>
     </div>
   )
