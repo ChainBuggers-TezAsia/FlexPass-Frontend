@@ -1,30 +1,56 @@
-import React from 'react'
-import { TezosToolkit } from "@taquito/taquito";
-import { TempleWallet } from '@temple-wallet/dapp';
-import TxnActivity from './TxnActivity';
-
-const Tezos = new TezosToolkit('https://testnet-tezos.giganode.io');
+import React, { useState } from "react";
+import Web3 from "web3";
+import axios from "axios";
+import { FaCopy } from "react-icons/fa6";
+import WalletLog from "./WalletLog";
 
 export default function UserDetails(props) {
-  // const handleTicket = () => {
-  //   props.setButton(1);
-  // };
-
-  // const balanceDeBhadwe = async (connectedWallet) => {
-  //   try {
-  //     const balance = await Tezos.tz.getBalance(connectedWallet.pkh);
-  //     console.log(`Balance: ${balance}`);
-  //   } catch (error) {
-  //     console.error("Error fetching balance:", error);
-  //   }
-  // };
+  const handleTicket = () => {
+    props.setButton(1);
+  };
 
   const handleConnectWallet = async () => {
-    try {
-      const available = await TempleWallet.isAvailable();
-      if (!available) {
-        console.log("Temple Wallet is not available");
-        return;
+    const x = localStorage.getItem("jwt_token");
+
+    if (window.ethereum) {
+      try {
+        const web3 = new Web3(window.ethereum);
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        console.log("Connected to Metamask");
+        window.ethereum
+          .enable()
+          .then(async (accounts) => {
+            const userWalletAddress = accounts[0];
+            setAddress(userWalletAddress);
+            console.log("User Wallet Address:", userWalletAddress);
+            const balanceWei = await web3.eth.getBalance(userWalletAddress);
+            const balanceEth = web3.utils.fromWei(balanceWei, "ether");
+            console.log("Account Balance (Ether):", balanceEth);
+            const token = JSON.parse(x).token
+            axios({
+              method: "post",
+              // url: "https://flexpass-back.onrender.com/user/login",
+              url: `https://flexpass-back.onrender.com/user/addAddress/${userWalletAddress}`,
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              // data: { email: email, password: password.toString() },
+            })
+              // .then(function (response) {
+              //   console(response);
+              // })
+              // .catch(function (error) {
+              //   console.log(error);
+              // });
+            // console.log("ress",data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+
+        // Now you can use the 'web3' instance to interact with the Ethereum network
+      } catch (error) {
+        console.log(error);
       }
 
       const wallet = new TempleWallet("Flexpass");
@@ -32,11 +58,8 @@ export default function UserDetails(props) {
 
       Tezos.setWalletProvider(wallet);
 
-      const pkh = await Tezos.wallet.pkh();
+      const pkh = await wallet.getPKH();
       console.log(`Connected with address: ${pkh}`);
-
-      // Call the balanceDeBhadwe function here
-      // await balanceDeBhadwe(wallet);
     } catch (error) {
       console.error("Error connecting wallet:", error);
     }
@@ -83,7 +106,6 @@ export default function UserDetails(props) {
             className="flex justify-center items-center relative h-75 w-200 rounded-full bg-[#6851FF]"
             onClick={() => {
               handleConnectWallet()
-              // balanceOfWallet()
             }}
           >
             <div className="absolute inset-0 bg-opacity-0 bg-white rounded-full border border-solid border-[#6851FF]"></div>
@@ -97,8 +119,7 @@ export default function UserDetails(props) {
         <div className='h-20 text-white'>
             Wallet Activity
         </div>
-        <TxnActivity/>
       </div>
     </div>
-  )
+  );
 }

@@ -5,10 +5,24 @@ import { FaWallet } from "react-icons/fa";
 import { TezosToolkit } from "@taquito/taquito";
 // import { TempleWallet } from '@temple-wallet/dapp';
 
+
 // Initialize Tezos toolkit
 // const Tezos = new TezosToolkit('https://testnet-tezos.giganode.io');
 
 export default function UserDetails(props) {
+
+
+
+  async function requestPermissions() {
+    // try {
+    //   console.log("Requesting permissions...");
+      // const permissions = await wallet.client.requestPermissions();
+    //   console.log("Got permissions:", permissions.address);
+    // } catch (error) {
+    //   console.log("Got error:", error);
+    // }
+  }
+
   const handleTicket = () => {
     props.setButton(1);
   };
@@ -17,7 +31,7 @@ export default function UserDetails(props) {
   };
 
   return (
-    <div className="flex flex-col cursor-pointer text-semibold text-white font-poppins font-semibold justify-center items-center">
+    <div className="flex flex-col cursor-pointer text-semibold text-white font-poppins font-semibold justify-center items-center flex w-full">
       {/* Header */}
       <div className="pt-12 flex flex-col items-center">
         <img className="m-auto" src={profileImg} alt="Profile" />
