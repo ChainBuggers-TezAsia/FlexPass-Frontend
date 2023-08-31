@@ -52,7 +52,8 @@ export default function OrderSummary(props) {
     try {
       // Load the contract instance
       const contract = await tezos.wallet.at(contractAddress);
-  
+      const permissions = await wallet.client.requestPermissions();
+      console.log("Got permissions:", permissions.address);
       // Call the smart contract method to buy a ticket
       const op = await contract.methods.buy_ticket().send({
         amount: 1,
