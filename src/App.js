@@ -32,7 +32,7 @@ function App() {
   // localStorage.clear();
 
   return (
-    <div className="App">
+    <div className="App" >
       {signup && (
         <SignUpPage
           setSignup={setSignup}
