@@ -1,17 +1,36 @@
 import React, { useState } from "react";
 import bg from '../assets/order-bg.png'
+import { TezosToolkit } from "@taquito/taquito";
+import { BeaconWallet } from "@taquito/beacon-wallet";
+import { NetworkType } from "@airgap/beacon-dapp";
+// import { wallet } from "./MyWallet";
+
 
 export default function OrderSummary(props) {
   // const [seatType, setSeatType] = useState({
   //   budget:0,
   //   elite:0
   // });
+  const tezos = new TezosToolkit("https://ghostnet.smartpy.io");
+
+
   const seats = props.seats;
   const convenience = seats.length * 49;
   const seatType = {
     budget: 0,
     elite: 0,
   };
+
+
+
+  const wallet = new BeaconWallet({
+    name: "FlexPass  Dapp",
+    preferredNetwork: NetworkType.GHOSTNET,
+})
+
+  tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 15000 } });
+
+  // const sub = Tezos.stream.subscribeOperation(filter)
 
   seats.forEach((seat) => {
     console.log("abcd", seat.slice(0, 1));
@@ -24,6 +43,31 @@ export default function OrderSummary(props) {
       seatType.budget += 1;
     }
   });
+
+  // Define the contract address (KT1 address)
+  const contractAddress = "KT1S2DUhxuvKwL1w8q51tBAb7kVbdVkF423r";
+  tezos.setWalletProvider(wallet);
+  // Function to buy a ticket
+  const buyTicketOperation = async () => {
+    try {
+      // Load the contract instance
+      const contract = await tezos.wallet.at(contractAddress);
+  
+      // Call the smart contract method to buy a ticket
+      const op = await contract.methods.buy_ticket().send({
+        amount: 1,
+        mutez: false,
+      });
+  
+      console.log("Waiting for confirmation...");
+      await op.confirmation(1);
+  
+      console.log("Ticket bought successfully!");
+    } catch (err) {
+      console.error("Error buying ticket:", err);
+    }
+  };
+  
   const seatPrice = seatType.elite * 350 + seatType.budget * 250;
   const taxes = ((seatPrice + convenience) * 0.15).toFixed(2);
   const total = Number(seatPrice) + Number(convenience) + Number(taxes);
@@ -102,7 +146,8 @@ export default function OrderSummary(props) {
                 <div
                   className=" rounded-xl [background:linear-gradient(90.57deg,#628eff,#8740cd_53.13%,#580475)] w-full py-2 mb-2 ">
                   <div className="py-1 text-center text-5xl font-semibold cursor-pointer">
-                    <button>Place Order</button>
+                  <button onClick={buyTicketOperation}>Place Order</button>
+
                   </div>
                 </div>
               </div>
