@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import bg from "../assets/bg.svg";
 import OrderSummary from "../components/OrderSummary";
-import ResellSummary from "../components/ResellSumamary";
+import ResellSummary from "../components/ResellSummary";
 import { TezosToolkit } from "@taquito/taquito";
 
 export default function PaymentPage(props) {

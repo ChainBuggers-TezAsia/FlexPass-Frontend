@@ -1,7 +1,54 @@
 import React from 'react'
 import { FaLocationDot } from 'react-icons/fa6'
+import { TezosToolkit } from "@taquito/taquito";
+import { BeaconWallet } from "@taquito/beacon-wallet";
+import { NetworkType } from "@airgap/beacon-dapp";
 
-export default function ResellSumamary() {
+const tezos = new TezosToolkit("https://ghostnet.smartpy.io");
+
+const contractAddress = "KT1St9YErFaeLjNjZXYFmqJY1W3UXrb5LRZh";
+
+const wallet = new BeaconWallet({
+    name: "FlexPass  Dapp",
+    preferredNetwork: NetworkType.GHOSTNET,
+})
+
+const purchaseTicket = async (tezAmount, receiverAddress) => {
+    try {
+      // Load the contract instance
+      const contract = await tezos.wallet.at(contractAddress);
+  
+      // Request wallet permissions
+      const permissions = await wallet.client.requestPermissions();
+      console.log("Got permissions:", permissions.address);
+  
+      // Call the smart contract method to buy a ticket with the specified tezAmount
+      const operation = await contract.methods
+        .purchaseTicket()
+        .send({ amount: tezAmount, mutez: false, receiver: receiverAddress });
+  
+      console.log("Waiting for confirmation...");
+  
+      // Wait for the operation confirmation
+      await operation.confirmation(1);
+  
+      console.log("Ticket bought successfully!");
+    } catch (error) {
+      console.error("Error buying ticket:", error);
+    }
+  };
+  
+  // Example usage:
+  const tezAmount = 1; // Specify the amount of tez to send
+  const receiverAddress = "your_receiver_address_here"; // Specify the receiver's address
+  purchaseTicket(tezAmount, receiverAddress);
+  
+  
+
+  purchaseTicket(receiverAddress, tezAmount);
+  
+
+export default function ResellSummary() {
     return (
         <div className='w-full my-10 mx-16'>
             <div className='flex flex-col justify-start'>
