@@ -9,7 +9,7 @@ export default function   CardBase() {
   useEffect(() => {
     axios({
       method: "get",
-      url: `https://flexpass-back.onrender.com/movie/getAllMovies`
+      url: `https://shiny-scarf-fawn.cyclic.app/movie/getAllMovies`
     })
       .then((response) => {
         // setSplitInto(response.data.userNames)

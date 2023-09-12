@@ -18,8 +18,8 @@ export default function SignUpPage(props) {
     else {
       axios({
         method: "post",
-        // url: "https://flexpass-back.onrender.com/user/signup",
-        url: "http://127.0.0.1:8000/user/signup",
+        url: "https://shiny-scarf-fawn.cyclic.app/user/signup",
+        // url: "http://127.0.0.1:8000/user/signup",
         data: {
           name: name,
           email: email,
