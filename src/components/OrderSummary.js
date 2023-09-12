@@ -11,7 +11,9 @@ export default function OrderSummary(props) {
   //   budget:0,
   //   elite:0
   // });
-  const tezos = new TezosToolkit("https://ghostnet.smartpy.io");
+  const Tezos = new TezosToolkit("https://ghostnet.smartpy.io");
+
+
 
 
   const seats = props.seats;
@@ -26,9 +28,13 @@ export default function OrderSummary(props) {
   const wallet = new BeaconWallet({
     name: "FlexPass  Dapp",
     preferredNetwork: NetworkType.GHOSTNET,
+
 })
   
-  tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 15000 } });
+Tezos.setWalletProvider(wallet);
+
+  Tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 15000 } });
+  // wallet.then((_) => wallet.getPKH())
 
   // const sub = Tezos.stream.subscribeOperation(filter)
 
@@ -46,28 +52,10 @@ export default function OrderSummary(props) {
 
   // Define the contract address (KT1 address)
   // const contractAddress = "KT1S2DUhxuvKwL1w8q51tBAb7kVbdVkF423r";
-  tezos.setWalletProvider(wallet);
-  // // Function to buy a ticket
-  // const buyTicketOperation = async () => {
-  //   try {
-  //     // Load the contract instance
-  //     const contract = await tezos.wallet.at(contractAddress);
-  //     const permissions = await wallet.client.requestPermissions();
-  //     console.log("Got permissions:", permissions.address);
-  //     // Call the smart contract method to buy a ticket
-  //     const op = await contract.methods.buy_ticket().send({
-  //       amount: 1,
-  //       mutez: false,
-  //     });
-  
-  //     console.log("Waiting for confirmation...");
-  //     await op.confirmation(1);
-  
-  //     console.log("Ticket bought successfully!");
-  //   } catch (err) {
-  //     console.error("Error buying ticket:", err);
-  //   }
-  // };
+  Tezos.setWalletProvider(wallet);
+  const userAddress = wallet.pkh ;
+
+
   // Define your contract address
   const contractAddress = "KT1St9YErFaeLjNjZXYFmqJY1W3UXrb5LRZh";
   // const contractAddress = "KT1Aa65MmvRDUTqeEuYKrHN7YUNKneTNmRPg";
@@ -76,7 +64,7 @@ export default function OrderSummary(props) {
 const TicketProcessing = async () => {
   try {
     // Load the contract instance
-    const contract = await tezos.wallet.at(contractAddress);
+    const contract = await Tezos.wallet.at(contractAddress);
 
     // Request wallet permissions
     const permissions = await wallet.client.requestPermissions();
@@ -93,6 +81,7 @@ const TicketProcessing = async () => {
     await operation.confirmation(1);
 
     console.log("Ticket bought successfully!");
+    console.log(wallet.getPKH());
   } catch (error) {
     console.error("Error buying ticket:", error);
   }
