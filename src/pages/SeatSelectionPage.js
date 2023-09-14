@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 import screen from "../assets/screen.png";
 import Seats from "../components/Seats.js";
 import MovieBanner from "../components/MovieBanner";
@@ -10,22 +11,45 @@ export default function TheaterSeat(props) {
   const navigate = useNavigate();
   const theatre = location.state.theatre;
   const movie = location.state.movie;
-  console.log({theatre, movie})
+  console.log("props", theatre._id, "  ----  ", movie._id);
   const [seats, setSeats] = useState([]);
+  const [status, setStatus] = useState([])
   // console.log("det", seats);
-const token = localStorage.getItem("jwt_token")
-const handleBook = () => {
-  if(token && seats.length>0){
-  navigate('/payment', {state:{seats, movie:movie._id, theatre:theatre._id, status:"first"}})
-  }
-  if(!token){
-    props.setLogin(true);
-  }
-}
+  const token = localStorage.getItem("jwt_token");
+
+ useEffect(() => {
+  axios.get(`https://shiny-scarf-fawn.cyclic.app/movie/tickets/${movie._id}/${theatre._id}`)
+  .then((res)=>{
+    setStatus(res.data)
+    // console.log("avc",res.data)
+  })
+ }, []);
+
+  const handleBook = () => {
+    if (token && seats.length > 0) {
+      navigate("/payment", {
+        state: {
+          seats,
+          movie: movie._id,
+          theatre: theatre._id,
+          status: "first",
+        },
+      });
+    }
+    if (!token) {
+      props.setLogin(true);
+    }
+  };
 
   return (
     <div className="relative z-0">
-      <LogInPage login={props.checkLogin} setLogin={props.setLogin} setSignup={props.setSignup} signup={props.checkSignup} setUserData={props.setUserData}/>
+      <LogInPage
+        login={props.checkLogin}
+        setLogin={props.setLogin}
+        setSignup={props.setSignup}
+        signup={props.checkSignup}
+        setUserData={props.setUserData}
+      />
 
       <MovieBanner
         name={movie.name}
@@ -58,6 +82,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"A-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -67,6 +92,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"A-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -76,6 +102,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"A-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -88,6 +115,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"B-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -97,6 +125,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"B-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -106,6 +135,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"B-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -118,6 +148,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"C-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -127,6 +158,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"C-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -136,6 +168,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"C-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -148,6 +181,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"D-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -157,6 +191,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"D-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -166,6 +201,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"D-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -178,6 +214,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"E-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -187,6 +224,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"E-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -196,6 +234,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"E-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -208,6 +247,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"F-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -217,6 +257,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"F-" + (index + 9)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -226,6 +267,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"F-" + (index + 23)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -238,6 +280,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"G-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -247,6 +290,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"G-" + (index + 5)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -256,6 +300,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"G-" + (index + 19)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -268,6 +313,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"H-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -277,6 +323,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"H-" + (index + 5)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -286,6 +333,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"H-" + (index + 19)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -298,6 +346,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"I-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -307,6 +356,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"I-" + (index + 5)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -316,6 +366,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"I-" + (index + 19)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -328,6 +379,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"J-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -337,6 +389,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"J-" + (index + 5)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -346,6 +399,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"J-" + (index + 19)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -362,6 +416,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"K-" + (index + 1)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -371,6 +426,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"K-" + (index + 8)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -380,6 +436,7 @@ const handleBook = () => {
                   <Seats
                     seatNo={"K-" + (index + 22)}
                     seats={seats}
+                    status={status}
                     setSeats={setSeats}
                   />
                 ))}
@@ -391,6 +448,7 @@ const handleBook = () => {
                 <Seats
                   seatNo={"L-" + (index + 1)}
                   seats={seats}
+                  status={status}
                   setSeats={setSeats}
                 />
               ))}
@@ -411,16 +469,16 @@ const handleBook = () => {
                 <div className=" text-white text-3xl mx-2">Resell Seats</div>
               </div>
               <div className=" flex justify-center items-center">
-                <div className=" w-7 h-6 rounded-t-full bg-cyan-400">
-                  
-                </div>
+                <div className=" w-7 h-6 rounded-t-full bg-cyan-400"></div>
                 <div className=" text-white text-3xl mx-2">Sold Seats</div>
               </div>
             </div>
           </div>
           <button className="rounded-full bg-blue-900 my-4">
-            <div className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4" 
-            onClick={handleBook}>
+            <div
+              className="rounded-[20px] [background:linear-gradient(-38.77deg,_rgba(191,_191,_191,_0.06),_rgba(0,_0,_0,_0)),_rgba(0,_0,_0,_0.14)] shadow-[-8px_4px_5px_rgba(0,_0,_0,_0.24)] [backdrop-filter:blur(53px)] w-48 h-16  text-white text-5xl text-center font-noto-sans px-4 py-4"
+              onClick={handleBook}
+            >
               Book now
             </div>
           </button>

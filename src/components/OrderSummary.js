@@ -4,16 +4,17 @@ import { TezosToolkit } from "@taquito/taquito";
 import { BeaconWallet } from "@taquito/beacon-wallet";
 import { NetworkType } from "@airgap/beacon-dapp";
 // import { wallet } from "./MyWallet";
+import axios from "axios"
 
 
 export default function OrderSummary(props) {
   // const [seatType, setSeatType] = useState({
   //   budget:0,
   //   elite:0
-  // });
+  // }); 
+
+  console.log("props",props)
   const Tezos = new TezosToolkit("https://ghostnet.smartpy.io");
-
-
 
 
   const seats = props.seats;
@@ -79,8 +80,17 @@ const TicketProcessing = async () => {
 
     // Wait for the operation confirmation
     await operation.confirmation(1);
-
+// console.log("PPP", props)
+    props.seats.forEach(async(seat)=>{
+      await axios.post("https://shiny-scarf-fawn.cyclic.app/movie/ticketsold",{
+        seat:seat,
+        movie:props.movie,
+        theatre:props.theatre
+      })
+      console.log(seat, "added")
+    })
     console.log("Ticket bought successfully!");
+    
     console.log(wallet.getPKH());
   } catch (error) {
     console.error("Error buying ticket:", error);
