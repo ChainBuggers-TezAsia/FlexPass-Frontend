@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Seats(props) {
-  console.log("seat", props.status)
+  // console.log("seat", props.status)
   const [isActive, setIsActive] = useState(false);
   const [status, setStatus] = useState("available");
   // if(props.status)

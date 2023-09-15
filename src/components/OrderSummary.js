@@ -13,7 +13,9 @@ export default function OrderSummary(props) {
   //   elite:0
   // }); 
 
-  console.log("props",props)
+console.log("abc",props.userData)
+
+  // console.log("props",props)
   const Tezos = new TezosToolkit("https://ghostnet.smartpy.io");
 
 
@@ -82,10 +84,12 @@ const TicketProcessing = async () => {
     await operation.confirmation(1);
 // console.log("PPP", props)
     props.seats.forEach(async(seat)=>{
-      await axios.post("https://shiny-scarf-fawn.cyclic.app/movie/ticketsold",{
+      // await axios.post("https://shiny-scarf-fawn.cyclic.app/movie/ticketsold",{
+      await axios.post("http://127.0.0.1:8000/movie/ticketsold",{
         seat:seat,
         movie:props.movie,
-        theatre:props.theatre
+        theatre:props.theatre,
+        user:props.userData._id
       })
       console.log(seat, "added")
     })

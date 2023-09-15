@@ -23,6 +23,7 @@ export default function PaymentPage(props) {
             seats={data.seats}
             movie={data.movie}
             theatre={data.theatre}
+            userData={props.userData}
           />
         ) : (
           <ResellSummary />

@@ -88,6 +88,7 @@ function App() {
                   setSignup={setSignup}
                   checkSignup={signup}
                   setUserData={setUserData}
+                  userData={userData}
                 />
               }
             />
@@ -98,7 +99,7 @@ function App() {
                 <UserPage setUserData={setUserData} userData={userData} />
               }
             />
-            <Route exact path="/payment" element={<PaymentPage />} />
+            <Route exact path="/payment" element={<PaymentPage userData={userData}/>} />
           </Routes>
           <Footer />
         </BrowserRouter>

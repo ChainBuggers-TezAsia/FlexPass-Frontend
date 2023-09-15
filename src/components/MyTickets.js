@@ -3,27 +3,13 @@ import axios from "axios";
 import ResellTicket from "./ResellTicket";
 import TicketLogElement from "./TicketLogElement";
 
-const MyTickets = () => {
+const MyTickets = (props) => {
   // const [movies, setMovies] = useState([]);
   // const [check, setCheck] = useState(false);
-
-  // useEffect(() => {
-  //   axios({
-  //     method: "get",
-  //     // url: `https://flexpass-back.onrender.com/movie/getAllMovies`
-  //     url: `http://127.0.0.1:8000/movie/getAllMovies`
-  //   })
-  //     .then((response) => {
-  //       // setSplitInto(response.data.userNames)
-  //       console.log("data", response.data);
-  //       setCheck(true)
-  //       setMovies(response.data);
-  //       console.log("state", movies);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  //   }, [0]);
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8000/movies/myTickets/${props.userData._id}`)
+    .then((res)=>{console.log("DATA",res)})
+    });
 
   return (
     <div className="my-10 mx-16">
