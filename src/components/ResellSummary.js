@@ -1,5 +1,5 @@
-import React from 'react'
-import { FaLocationDot } from 'react-icons/fa6'
+import React, { useState, useEffect } from 'react';
+import { FaLocationDot } from 'react-icons/fa6';
 import { TezosToolkit } from "@taquito/taquito";
 import { BeaconWallet } from "@taquito/beacon-wallet";
 import { NetworkType } from "@airgap/beacon-dapp";
@@ -8,50 +8,57 @@ const tezos = new TezosToolkit("https://ghostnet.smartpy.io");
 
 tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 1500000000 } });
 
-
 const contractAddress = "KT1St9YErFaeLjNjZXYFmqJY1W3UXrb5LRZh";
 
 const wallet = new BeaconWallet({
-    name: "FlexPass  Dapp",
+    name: "FlexPass Dapp",
     preferredNetwork: NetworkType.GHOSTNET,
-})
+});
 
-const purchaseTicket = async (tezAmount, receiverAddress) => {
-    try {
-      // Load the contract instance
-      const contract = await tezos.wallet.at(contractAddress);
-  
-      // Request wallet permissions
-      const permissions = await wallet.client.requestPermissions();
-      console.log("Got permissions:", permissions.address);
-  
-      // Call the smart contract method to buy a ticket with the specified tezAmount
-      const operation = await contract.methods
-        .purchaseTicket()
-        .send({ amount: tezAmount, mutez: false, receiver: receiverAddress });
-  
-      console.log("Waiting for confirmation...");
-  
-      // Wait for the operation confirmation
-      await operation.confirmation(1);
-  
-      console.log("Ticket bought successfully!");
-    } catch (error) {
-      console.error("Error buying ticket:", error);
-    }
-  };
-  
-  // Example usage:
-  const tezAmount = 1; // Specify the amount of tez to send
-  const receiverAddress = "tz1WsmHMwt1JTsEc1DEqNbhWB517hTJGszNn"; // Specify the receiver's address
-  purchaseTicket(tezAmount, receiverAddress);
-  
+const ResellSummary = () => {
+    const [tezAmount, setTezAmount] = useState(1); // Initialize with your default tez amount
+    const [receiverAddress, setReceiverAddress] = useState("tz1WsmHMwt1JTsEc1DEqNbhWB517hTJGszNn"); // Initialize with your default receiver address
+
+    useEffect(() => {
+        // Configure the TezosToolkit instance with the wallet signer
+        async function configureTezos() {
+            try {
+                await wallet.requestPermissions();
+                tezos.setWalletProvider(wallet);
+            } catch (error) {
+                console.error("Error configuring Tezos Toolkit:", error);
+            }
+        }
+
+        configureTezos();
+    }, []);
+
+    const purchaseTicket = async () => {
+        try {
+            // Load the contract instance
+            const contract = await tezos.wallet.at(contractAddress);
+
+            // Call the smart contract method to buy a ticket with the specified tezAmount
+            const operation = await contract.methods
+                .purchaseTicket()
+                .send({ amount: tezAmount, mutez: false, receiver: receiverAddress });
+
+            console.log("Waiting for confirmation...");
+
+            // Wait for the operation confirmation
+            await operation.confirmation(1);
+
+            console.log("Ticket bought successfully!");
+        } catch (error) {
+            console.error("Error buying ticket:", error);
+        }
+    };
   
 
 //   purchaseTicket(receiverAddress, tezAmount);
   
 
-export default function ResellSummary() {
+// export default function ResellSummary() {
     return (
         <div className='w-full my-10 mx-16'>
             <div className='flex flex-col justify-start'>
@@ -121,7 +128,7 @@ export default function ResellSummary() {
                             <div className="flex px-50 py-5 items-center justify-center w-3/4">
                               <div className="rounded-xl [background:linear-gradient(90.57deg,#628eff,#8740cd_53.13%,#580475)] w-full py-2 mb-2">
                                   <div className="py-1 text-white text-center text-5xl font-semibold cursor-pointer">
-                                       <button onClick={() => purchaseTicket(tezAmount, receiverAddress)}>Resell</button>
+                                       <button onClick={purchaseTicket}>Resell</button>
                                   </div>
                                 </div>
                            </div>
@@ -132,3 +139,4 @@ export default function ResellSummary() {
         </div>
     )
 }
+export default ResellSummary;
