@@ -11,12 +11,14 @@ export default function ResellTicket() {
 
   return (
     <div className="relative w-full h-40">
-      <div className="flex bg-[#393d5e] rounded-lg h-40 w-3/4 p-4">
-        <div className="bg-green-200 w-1/3 rounded-lg"></div>
+      <div className="flex bg-[#393d5e] rounded-lg h-35 w-1/3 p-4">
+        <div className="bg-green-200 w-1/3 rounded-lg">
+        <img src="https://assets-prd.ignimgs.com/2023/02/08/jw4-2025x3000-online-character-1sht-keanu-v187-1675886090936.jpg" alt="John Wick" className="w-full h-full object-cover" />
+        </div>
         <div className="flex flex-col justify-between ml-4">
           <div>
-            <p className="text-3xl font-semibold text-white">Grand Turismo</p>
-            <p className="text-sm text-gray-300">Monday, 16 December 2023</p>
+            <p className="text-3xl font-semibold text-white">John Wick</p>
+            <p className="text-sm text-gray-300">Monday, 16 August 2023</p>
           </div>
           <div className="flex items-center">
             <FaLocationDot className="text-[#9DA8BE] text-2xl" />

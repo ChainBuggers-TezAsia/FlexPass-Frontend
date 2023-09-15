@@ -36,8 +36,8 @@ console.log("abc",props.userData)
   
 Tezos.setWalletProvider(wallet);
 
-  Tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 15000 } });
-  // wallet.then((_) => wallet.getPKH())
+  Tezos.setProvider({ config: { streamerPollingIntervalMilliseconds: 150000000 } });
+  // wallet.then((_) => wallet.getPKH())  
 
   // const sub = Tezos.stream.subscribeOperation(filter)
 
@@ -56,7 +56,7 @@ Tezos.setWalletProvider(wallet);
   // Define the contract address (KT1 address)
   // const contractAddress = "KT1S2DUhxuvKwL1w8q51tBAb7kVbdVkF423r";
   Tezos.setWalletProvider(wallet);
-  const userAddress = wallet.pkh ;
+  // const userAddress = wallet.pkh ;
 
 
   // Define your contract address

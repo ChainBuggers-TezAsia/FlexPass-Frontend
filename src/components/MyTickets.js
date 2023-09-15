@@ -22,7 +22,6 @@ const MyTickets = (props) => {
         </div>
         <div className="flex mx-2 my-4 justify-between">
           <ResellTicket />
-          <ResellTicket />
         </div>
         <div className="text-poppins text-4xl font-medium text-white">
           History :
