@@ -8,9 +8,12 @@ export default function Seats(props) {
   useEffect(() => {
     // const containsSeat = props.status.some(obj => obj.seat === props.seatNo)
     props.status.forEach((seat) => {
-      if (seat.seat === props.seatNo) {
+      if (seat.seat === props.seatNo && seat.listed===false) {
         console.log("chec", props.seatNo);
         setStatus("unavailable");
+      }
+      else if(seat.seat === props.seatNo && seat.listed === true){
+        setStatus("listed")
       }
     });
     // console.log("pp", props.seatNo)
@@ -25,7 +28,7 @@ export default function Seats(props) {
           // if (!isActive ) {
 
           // console.log("Stat", status)
-          if (props.seats.length < 5 && status === "available") {
+          if (props.seats.length < 5 && (status === "available" || status === "listed")) {
             setIsActive(true);
             props.setSeats(props.seats.concat(props.seatNo));
           } else {
@@ -34,7 +37,7 @@ export default function Seats(props) {
           }
         }}
         className={`cursor-pointer w-7 h-6 rounded-t-full ${
-          isActive && status === "available" ? "bg-green-500" : status === "unavailable" ? "bg-cyan-400" : "bg-gray-800"
+          isActive && status === "available" ? "bg-green-500" : status === "unavailable" ? "bg-cyan-400" : status === "listed"?"bg-orange":"bg-gray-800"
         }  m-1 text-center text-[12px] flex items-center justify-center`}
       >
         {props.seatNo.slice(2)}

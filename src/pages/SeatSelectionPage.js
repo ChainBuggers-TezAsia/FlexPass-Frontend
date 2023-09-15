@@ -22,7 +22,7 @@ export default function TheaterSeat(props) {
   axios.get(`http://127.0.0.1:8000/movie/tickets/${movie._id}/${theatre._id}`)
   .then((res)=>{
     setStatus(res.data)
-    // console.log("avc",res.data)
+    console.log("avc",res.data)
   })
  }, []);
 
