@@ -84,8 +84,8 @@ const TicketProcessing = async () => {
     await operation.confirmation(1);
 // console.log("PPP", props)
     props.seats.forEach(async(seat)=>{
-      // await axios.post("https://shiny-scarf-fawn.cyclic.app/movie/ticketsold",{
-      await axios.post("http://127.0.0.1:8000/movie/ticketsold",{
+      await axios.post("https://shiny-scarf-fawn.cyclic.app/movie/ticketsold",{
+      // await axios.post("http://127.0.0.1:8000/movie/ticketsold",{
         seat:seat,
         movie:props.movie,
         theatre:props.theatre,

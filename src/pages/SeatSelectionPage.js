@@ -18,8 +18,8 @@ export default function TheaterSeat(props) {
   const token = localStorage.getItem("jwt_token");
 // console.log("abc",props.userData)
  useEffect(() => {
-  // axios.get(`https://shiny-scarf-fawn.cyclic.app/movie/tickets/${movie._id}/${theatre._id}`)
-  axios.get(`http://127.0.0.1:8000/movie/tickets/${movie._id}/${theatre._id}`)
+  axios.get(`https://shiny-scarf-fawn.cyclic.app/movie/tickets/${movie._id}/${theatre._id}`)
+  // axios.get(`http://127.0.0.1:8000/movie/tickets/${movie._id}/${theatre._id}`)
   .then((res)=>{
     setStatus(res.data)
     console.log("avc",res.data)

@@ -9,7 +9,7 @@ const MyTickets = (props) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/movie/myTickets/${props.userData._id}`)
+      .get(`https://shiny-scarf-fawn.cyclic.app/movie/myTickets/${props.userData._id}`)
       .then((res) => {
         console.log("DATA", res.data);
         setData(res.data);

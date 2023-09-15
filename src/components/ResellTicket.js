@@ -8,7 +8,7 @@ export default function ResellTicket(props) {
 
   const handleResale = () => {
     // navigate('/payment', { state: { status: 'resale' } });
-    axios.post(`http://127.0.0.1:8000/movie/ticket/resale/${props.id}`,{})
+    axios.post(`https://shiny-scarf-fawn.cyclic.app/movie/ticket/resale/${props.id}`,{})
     .then((res)=>console.log(res))
   };
 
