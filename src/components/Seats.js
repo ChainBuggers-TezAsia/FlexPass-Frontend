@@ -34,7 +34,7 @@ export default function Seats(props) {
           }
         }}
         className={`cursor-pointer w-7 h-6 rounded-t-full ${
-          isActive && status ==="available" ? "bg-green-500" : status==="unavailable"?"bg-cyan-400": "bg-gray-800"
+          isActive && status === "available" ? "bg-green-500" : status === "unavailable" ? "bg-cyan-400" : "bg-gray-800"
         }  m-1 text-center text-[12px] flex items-center justify-center`}
       >
         {props.seatNo.slice(2)}

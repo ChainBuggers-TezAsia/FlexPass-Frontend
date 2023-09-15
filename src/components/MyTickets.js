@@ -6,10 +6,17 @@ import TicketLogElement from "./TicketLogElement";
 const MyTickets = (props) => {
   // const [movies, setMovies] = useState([]);
   // const [check, setCheck] = useState(false);
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/movies/myTickets/${props.userData._id}`)
-    .then((res)=>{console.log("DATA",res)})
-    });
+    axios
+      .get(`http://127.0.0.1:8000/movie/myTickets/${props.userData._id}`)
+      .then((res) => {
+        console.log("DATA", res.data);
+        setData(res.data);
+      });
+  }, []);
+
+  console.log("tte", data[0])
 
   return (
     <div className="my-10 mx-16">
@@ -21,7 +28,11 @@ const MyTickets = (props) => {
           Recent :
         </div>
         <div className="flex mx-2 my-4 justify-between">
-          <ResellTicket />
+          {data.map((e)=>{
+            return(
+              <ResellTicket image={e.movie.image} movie={e.movie.name} theatre={e.theatre.name} seat={e.seat} id={e._id}/>
+            )
+          })}
         </div>
         <div className="text-poppins text-4xl font-medium text-white">
           History :
